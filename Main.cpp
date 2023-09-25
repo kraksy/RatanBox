@@ -74,7 +74,7 @@ int main()
     glCompileShader(vertexShader);
 
 
-    // check if shader loaded
+    // check if vertex shader loaded
     int success;
     char infoLog[512];
     glGetShaderiv(vertexShader, GL_COMPILE_STATUS, &success);
@@ -108,18 +108,29 @@ int main()
         std::cout << "ERROR::shaderProgram::FAILED\n" << infoLog << std::endl;
     }
 
-
+    unsigned int VBO;
 
     float vertices[] = {
-     -0.5f, -0.5f, 0.0f,
-     0.5f, -0.5f, 0.0f,
-     0.0f,  0.5f, 0.0f
+        -0.5f, -0.5f, 0.0f,
+        0.5f, -0.5f, 0.0f,
+        0.0f,  0.5f, 0.0f
     };
 
-    unsigned int VBO;
+    // copy vertices in buffer 
+    glBindBuffer(GL_ARRAY_BUFFER, VBO);
+    glBufferData(GL_ARRAY_BUFFER, sizeof(vertices), vertices, GL_STATIC_DRAW);
+
+    // set vertex attribute pointers
+    glVertexAttribPointer(0, 3, GL_FLOAT, GL_FALSE, 3 * sizeof(float), (void*)0);
+    glEnableVertexAttribArray(0);
+
+    // just use the shader program B] 
+    glUseProgram(shaderProgram);
+
     
 
-
+    glDeleteShader(vertexShader);
+    glDeleteShader(fragmentShader);
     glfwTerminate();
     return 0;
 }
