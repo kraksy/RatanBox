@@ -137,11 +137,12 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="EZ.cpp" />
     <ClCompile Include="glad.c" />
+    <ClCompile Include="init.cpp" />
     <ClCompile Include="Main.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="init.h" />
     <ClInclude Include="Shader.h" />
   </ItemGroup>
   <ItemGroup>
