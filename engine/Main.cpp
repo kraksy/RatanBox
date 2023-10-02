@@ -2,8 +2,6 @@
 
 #include <glad/glad.h>
 #include <GLFW/glfw3.h>
-#include </Users/kraks/Desktop/GLfun/GLfun/shader.h>
-#include </Users/kraks/Desktop/GLfun/GLfun/stb_image.h>
 
 #include <iostream>
 
