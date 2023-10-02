@@ -4,11 +4,11 @@ class entername
 	public:
 		GameState State;
 		bool Keys[1024];
-		unsigned int Width, height;
-		~entername();
+		unsigned int Width, Height;
+		entername(unsigned int width, unsigned int height);
 		void Init();
 		void ProcessInput();
-		void Update();
+		void Loop();
 		void Render();
 };
 

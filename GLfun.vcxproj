@@ -140,10 +140,14 @@
     <ClCompile Include="engine\entername.cpp" />
     <ClCompile Include="libraries\glad.c" />
     <ClCompile Include="engine\Main.cpp" />
+    <ClCompile Include="engine\SpriteTexture.cpp" />
+    <ClCompile Include="engine\Shaders.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="engine\entername.h" />
+    <ClInclude Include="engine\headerfiles\entername.h" />
+    <ClInclude Include="engine\headerfiles\Shaders.h" />
     <ClInclude Include="shaders\shader.h" />
+    <ClInclude Include="engine\headerfiles\SpriteTexture.h" />
   </ItemGroup>
   <ItemGroup>
     <None Include="shaders\3.3.shader.fs" />
