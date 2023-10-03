@@ -30,35 +30,17 @@
     <ClCompile Include="libraries\glad.c">
       <Filter>Source Files\engine</Filter>
     </ClCompile>
-    <ClCompile Include="engine\entername.cpp">
-      <Filter>Source Files\engine</Filter>
-    </ClCompile>
-    <ClCompile Include="engine\SpriteTexture.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="engine\Shaders.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="shaders\shader.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="engine\headerfiles\entername.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="engine\headerfiles\SpriteTexture.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="engine\headerfiles\Shaders.h">
+    <ClInclude Include="engine\shaders\shader.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
-    <None Include="shaders\3.3.shader.vs">
+    <None Include="engine\shaders\3.3.shader.vs">
       <Filter>Source Files\shaders</Filter>
     </None>
-    <None Include="shaders\3.3.shader.fs">
+    <None Include="engine\shaders\3.3.shader.fs">
       <Filter>Source Files\shaders</Filter>
     </None>
   </ItemGroup>
