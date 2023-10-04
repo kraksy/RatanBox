@@ -7,7 +7,7 @@
 class RElements
 {
 	public:
-		struct Vertex
+		struct Vertex 
 		{
 			std::array<float, 4> color;
 			std::array<float, 3> position;
@@ -23,6 +23,8 @@ class RElements
 			Vertex{{0.12f, 0.9f, 0.1f,  1.0f},   { 0.5f,  0.5f, 0.0f}},
 			Vertex{{0.12f, 0.1f, 0.9f,  1.0f},   { 0.5f, -0.5f, 0.0f}}
 		};
+
+
 		
 };
 

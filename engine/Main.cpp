@@ -4,9 +4,8 @@
 #include <GLFW/glfw3.h>
 #include <iostream>
 #include <glm/glm.hpp>
-
-#include </Users/kraks/Desktop./GLfun/GLfun/sprites/stb_image.h>
-#include </Users/kraks/Desktop/GLfun/GLfun/engine/shaders/shader.h>
+#include <shader.h>
+#include <stb_image.h>
 
 void framebuffer_size_callback(GLFWwindow* window, int width, int height);
 void processInput(GLFWwindow* window);
@@ -119,6 +118,7 @@ int main()
     //glVertexAttribPointer(2, 2, GL_FLOAT, GL_FALSE, 3 * sizeof(float), (void*)(6 * sizeof(float)));
     //glEnableVertexAttribArray(2);
 
+    
     // loop
     // .....................................
     while (!glfwWindowShouldClose(window))
