@@ -30,9 +30,18 @@
     <ClCompile Include="libraries\glad.c">
       <Filter>Source Files\engine</Filter>
     </ClCompile>
+    <ClCompile Include="engine\core\core.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="engine\shaders\shader.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="engine\Graphics\RElements.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="engine\Graphics\RColour.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

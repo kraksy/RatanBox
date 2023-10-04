@@ -3,10 +3,10 @@
 #include <glad/glad.h>
 #include <GLFW/glfw3.h>
 #include <iostream>
+#include <glm/glm.hpp>
 
 #include </Users/kraks/Desktop./GLfun/GLfun/sprites/stb_image.h>
 #include </Users/kraks/Desktop/GLfun/GLfun/engine/shaders/shader.h>
-#include </Users/kraks/Desktop/GLfun/GLfun/engine/glm/glm.hpp>
 
 void framebuffer_size_callback(GLFWwindow* window, int width, int height);
 void processInput(GLFWwindow* window);

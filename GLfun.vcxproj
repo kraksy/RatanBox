@@ -137,10 +137,13 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="engine\core\core.cpp" />
     <ClCompile Include="libraries\glad.c" />
     <ClCompile Include="engine\Main.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="engine\Graphics\RColour.h" />
+    <ClInclude Include="engine\Graphics\RElements.h" />
     <ClInclude Include="engine\shaders\shader.h" />
   </ItemGroup>
   <ItemGroup>
