@@ -1,5 +1,6 @@
 #include "triangle.h"
 #include <glm/glm.hpp>
+#include <iostream>
 
 namespace Graphics 
 {
@@ -10,9 +11,9 @@ namespace Graphics
       std::array<float, 3> position;
     };     
 
-    std::array<Vertex, 6> triangle = 
+    std::array<Vertex, 6> Triangle = 
     {
-      // vertexes for triangle
+      Vertex{{0.9f }}
     }
 
   } 

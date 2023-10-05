@@ -42,27 +42,39 @@
     <ClCompile Include="engine\Graphics\RColour.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="engine\Graphics\primitives\triangle.cpp">
+    <ClCompile Include="engine\triangle.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="engine\RatanBox.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="VertexArrays.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="libraries\include\shader.h">
+    <ClInclude Include="libraries\include\core\shader.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="libraries\include\RElements.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="libraries\include\RColour.h">
+    <ClInclude Include="libraries\include\core\RColour.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="libraries\include\input.h">
+    <ClInclude Include="libraries\include\core\input.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="libraries\include\window.h">
+    <ClInclude Include="libraries\include\core\window.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="libraries\include\triangle.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="libraries\include\core\core.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="libraries\include\core\VertexArrays.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

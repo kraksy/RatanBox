@@ -140,18 +140,22 @@
     <ClCompile Include="engine\core\input.cpp" />
     <ClCompile Include="engine\Graphics\RColour.cpp" />
     <ClCompile Include="engine\Graphics\RElements.cpp" />
+    <ClCompile Include="engine\RatanBox.cpp" />
     <ClCompile Include="libraries\glad.c" />
     <ClCompile Include="engine\Main.cpp" />
     <ClCompile Include="engine\core\window.cpp" />
-    <ClCompile Include="engine\Graphics\primitives\triangle.cpp" />
+    <ClCompile Include="engine\triangle.cpp" />
+    <ClCompile Include="VertexArrays.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="libraries\include\RColour.h" />
+    <ClInclude Include="libraries\include\core\core.h" />
+    <ClInclude Include="libraries\include\core\RColour.h" />
     <ClInclude Include="libraries\include\RElements.h" />
-    <ClInclude Include="libraries\include\shader.h" />
-    <ClInclude Include="libraries\include\input.h" />
-    <ClInclude Include="libraries\include\window.h" />
+    <ClInclude Include="libraries\include\core\shader.h" />
+    <ClInclude Include="libraries\include\core\input.h" />
+    <ClInclude Include="libraries\include\core\window.h" />
     <ClInclude Include="libraries\include\triangle.h" />
+    <ClInclude Include="libraries\include\core\VertexArrays.h" />
   </ItemGroup>
   <ItemGroup>
     <None Include="engine\shaders\3.3.shader.fs" />

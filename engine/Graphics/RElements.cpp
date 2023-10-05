@@ -9,14 +9,14 @@ namespace Graphics
 	{
 		
 		void drawElement(int id, int primitive , glm::vec3 position, glm::vec2 colour, glm::vec3 rotation)
-    {
-      switch (primitive) {
-        1:
-          // get from primitives
-        2:
+		{
+			switch (primitive) {
+				1:
+				// get from primitives
+				2:
       
-          break;
-      }
+				break;
+			}
 
 			// get which element you want to draw from primitives
 			// assign id
