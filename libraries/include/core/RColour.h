@@ -7,7 +7,7 @@ class RColour
 		Colour color;
 		glm::vec3 getColour() 
 		{
-			switch (color) 
+			switch (color)
 			{
 			case BLACK:
 				return glm::vec3(0, 0, 0);

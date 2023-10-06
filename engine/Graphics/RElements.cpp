@@ -1,6 +1,6 @@
 #include <RElements.h>
 #include <triangle.h>
-#include <RColour.h>
+#include <core/RColour.h>
 #include <glm/glm.hpp>
 
 namespace Graphics
@@ -11,9 +11,9 @@ namespace Graphics
 		void drawElement(int id, int primitive , glm::vec3 position, glm::vec2 colour, glm::vec3 rotation)
 		{
 			switch (primitive) {
-				1:
+				case 1:
 				// get from primitives
-				2:
+				case 2:
       
 				break;
 			}

@@ -4,17 +4,17 @@
 
 namespace Graphics 
 {
-  namespace primitives 
-  {
-    struct Vertex {
-      std::array<float, 4> color;
-      std::array<float, 3> position;
-    };     
-
-    std::array<Vertex, 6> Triangle = 
+    namespace primitives
     {
-      Vertex{{0.9f }}
-    }
+        struct Vertex {
+            std::array<float, 4> color;
+            std::array<float, 3> position;
+        };
 
-  } 
+        std::array<Vertex, 6> Triangle =
+        {
+          Vertex{{0.9f }}
+        };
+
+    }
 }
