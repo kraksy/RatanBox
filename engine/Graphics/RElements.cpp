@@ -25,7 +25,7 @@ namespace Graphics
 			// get rotation
 			// send to buffer function
 		};
-
+ e
 		void removeElement()
 		{
 			// which element by id 
