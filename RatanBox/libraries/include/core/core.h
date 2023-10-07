@@ -5,6 +5,8 @@
 #include <GLFW/glfw3.h>
 #include <glm/glm.hpp>
 
+#include <core/VertexAssembly.h>
+
 #include <iostream>
 #include <stdio.h>
 #include <stdint.h>
