@@ -19,13 +19,17 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="src\Engine\input.cpp" />
     <ClCompile Include="libraries\glad.c" />
     <ClCompile Include="src\Application.cpp" />
+    <ClCompile Include="src\Engine\Window.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="libraries\include\core\input.h" />
     <ClInclude Include="libraries\include\core\core.h" />
+    <ClInclude Include="libraries\include\core\ShaderLoader.h" />
     <ClInclude Include="libraries\include\core\VertexAssembly.h" />
-    <ClInclude Include="libraries\include\core\stb_image.h" />
+    <ClInclude Include="libraries\include\core\Window.h" />
   </ItemGroup>
   <ItemGroup>
     <Library Include="libraries\lib\glfw3.lib" />
