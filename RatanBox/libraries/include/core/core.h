@@ -1,12 +1,17 @@
 #ifndef ENGINE_COREH
 #define ENGINE_CORE
 
+//extension libs
 #include <glad/glad.h>
 #include <GLFW/glfw3.h>
 #include <glm/glm.hpp>
 
+//header files
 #include <core/VertexAssembly.h>
+#include <core/GLFWInit.h>
+#include <core/shapes.h>
 
+//basic imports
 #include <iostream>
 #include <stdio.h>
 #include <stdint.h>
