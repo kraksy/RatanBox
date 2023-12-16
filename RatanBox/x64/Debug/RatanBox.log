@@ -1,6 +1,0 @@
-﻿  Application.cpp
-C:\Users\kraks\Desktop\RatanBox\RatanBox\libraries\include\core\VertexAssembly.h(23,6): warning C4200: nonstandard extension used: zero-sized array in struct/union
-C:\Users\kraks\Desktop\RatanBox\RatanBox\libraries\include\core\VertexAssembly.h(23,6): message : This member will be ignored by a defaulted constructor or copy/move assignment operator
-C:\Users\kraks\Desktop\RatanBox\RatanBox\libraries\include\core\VertexAssembly.h(33,6): warning C4200: nonstandard extension used: zero-sized array in struct/union
-C:\Users\kraks\Desktop\RatanBox\RatanBox\libraries\include\core\VertexAssembly.h(33,6): message : This member will be ignored by a defaulted constructor or copy/move assignment operator
-  RatanBox.vcxproj -> C:\Users\kraks\Desktop\RatanBox\RatanBox\x64\Debug\RatanBox.exe
