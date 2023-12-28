@@ -9,3 +9,24 @@
 
 # changing batch files to your liking
 
+## build settings 
+- hop into `build` for  
+
+
+
+
+## shell settings
+
+- shell.bat has list of directories you can change
+
+```batch
+set path=src;%path% 
+set include=lib\include;%include%
+set lib=lib\library;%library%
+
+:: after = , put your own path
+```
+
+## editor settings
+
+- no

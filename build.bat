@@ -12,5 +12,5 @@ for /D %%d in ("%include_dir%\*") do (
     echo Added %%d to INCLUDE
 )
 
-cl -Zi "%project_dir%\src\main.cpp" user32.lib Gdi32.lib glfw3.lib /showIncludes /I lib\include\glm\glm.hpp
+cl -Zi "%project_dir%\src\main.cpp" user32.lib Gdi32.lib glfw3.lib /I "/include"
 popd
