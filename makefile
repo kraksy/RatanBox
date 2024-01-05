@@ -1,2 +1,17 @@
+
+
+includePath = -I include/glm
+libraryPath = -L /library
+
 main:
-	g++ src/main.cpp 
+	mkdir ../build
+	cd build
+	echo "building main.cpp"
+	gcc src/main.cpp $(includePath) $(libraryPath) 
+
+Window : 
+	echo "building window.cpp"
+	gcc src/Window.cpp
+	
+clean : 
+	echo "cleaned"

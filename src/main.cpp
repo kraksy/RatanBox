@@ -2,9 +2,7 @@
 
 int main()
 {
-	
-	std::cout << "fuck off" << std::endln
-
+	std::cout << "fuck off" << std::endl
 
 	return 0;
 }
