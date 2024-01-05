@@ -11,6 +11,8 @@
 side
 - [] make a logger
 - [] find a way to use sprites 
+//todo(krekr) brainstorm about this later
+### finishing prototype results in moving on the the next stage 
 
 ## side todos 
 
