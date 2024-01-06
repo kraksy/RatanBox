@@ -5,6 +5,9 @@
 ## prototype
 - [] enemy object
 - [] player object
+- [] power ups
+- [] stats for player
+- [] weapon system
 - [] way to damage these functions
 - [] if they share position , yell to the logger
 --- 
