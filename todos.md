@@ -23,3 +23,6 @@ side
 
 - [] finish the makefile. 
 - [] when makefile finished, rewrite docs.
+
+
+- [] if I will ever do waterfall in tha game , IT NEED TO BE A TRAP

@@ -1,11 +1,11 @@
 class checkCollision // check if 2 points colided
 {
 private:
-      int x;
-      int y;
+
 public:
       checkCollision();
       ~checkCollision();
+      bool checkVectorCollision(int x1, int y1, int x2, int y2);
 };
 
 checkCollision::checkCollision()
@@ -16,7 +16,7 @@ checkCollision::~checkCollision()
 {
 }
 
-checkCollision::checkVectorCollision(int x1, int y1, int x2, int y2)
+bool checkCollision::checkVectorCollision(int x1, int y1, int x2, int y2)
 {
       if (x1 == x2 && y1 == y2)
       {
@@ -27,3 +27,4 @@ checkCollision::checkVectorCollision(int x1, int y1, int x2, int y2)
             return false;
       }
 }
+      
