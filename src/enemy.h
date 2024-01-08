@@ -1,72 +1,62 @@
+#include <iostream>
+
 class enemy 
 {
-
-    String name;
-    int health;
-    int maxHealth;
-    int damage;
-    int id;
-
+    private:
+        std::string name;
+        int health;
+        int maxHealth;
+        int damage;
+        int id;
     public:
+        std::string getName();
+        int getHealth();
+        int getMaxHealth();
+        int getDamage();
+        int getId();
 
-        int width; //todo(krekr) get image size
-        int height;
-        int x;
-        int y;
-        int dx; //delta x
-        int dy; //delta y
-        float speed; 
-        float jumpSize;
-
-        enemy(String name, int health, int damage)
-        {
-            this.heath = health;
-            this.name = name;
-            this.maxHealth = health;
-            this.damage = damage;
-            this id = for (int i = 0; i < id; i++) {this.id == i}
-        }
-
-        void getName();
-        void getHealth();
-        void getMaxHealth();
-        void getDamage();
-        void getId();
-
-        void setName(string name);
-        void setHealth(int health);
-        void setMaxHealth(int maxHealth);
-        void setDamage(int damage);
-        void setId(int id);
-
+        int setName(std::string name);
+        int setHealth(int health);
+        int setMaxHealth(int maxHealth);
+        int setDamage(int damage);
+        int setId(int id);
 }
 
-enemy::getName()
+enemy(std::string String, int number, int damage)
 {
-    return this.name;
+    health = health;
+    name = name;
+    maxHealth = health;
+    damage = damage;
+    id = for (int i = 0; i < id; i++) {this.id == i};
 }
 
-enemy::getHealth()
+std::string enemy::getName()
+{
+    return name;
+}
+
+int enemy::getHealth()
 {
     return this.health;
 }
 
-enemy::getId()
-{
-    return this.id;
-}
-
-enemy::getMaxHealth()
+int enemy::getMaxHealth()
 {
     return this.maxHealth;
 }
 
-enemy::getDamage()
+int enemy::getId()
+{
+    return this.id;
+}
+
+int enemy::getDamage()
 {
     return this.damage
 }
 
-enemy::setDamage(int damage)
+int enemy::setDamage(int damage)
 {
     this.damage = damage;
 }

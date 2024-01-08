@@ -1,5 +1,4 @@
 
-
 includePath = -I include/glm
 libraryPath = -L /library
 

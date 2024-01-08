@@ -9,10 +9,12 @@
 - [] stats for player
 - [] weapon system
 - [] way to damage these functions
-- [] if they share position , yell to the logger
+- [] "collision system" if they share position , yell to the logger
+
+- [] game loop
 --- 
 side
-- [] make a logger
+- [x] make a logger
 - [] find a way to use sprites 
 //todo(krekr) brainstorm about this later
 ### finishing prototype results in moving on the the next stage 
@@ -21,5 +23,3 @@ side
 
 - [] finish the makefile. 
 - [] when makefile finished, rewrite docs.
-
- 

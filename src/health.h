@@ -1,3 +1,8 @@
+#include <iostream>
+#include <logger.h>
+
+logger Logger = logger();
+
 class health 
 {
     int hp;
@@ -15,8 +20,7 @@ void health::setHealth(int health)
 {
     if (health <= 0)
     {
-        //todo(krekr) make a logging function
-        std::cout << "you cant set health to 0 or less.";
+        Logger.log("you cant set health to 0 or less.");
     }
 
     this.hp = health;
