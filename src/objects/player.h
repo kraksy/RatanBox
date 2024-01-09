@@ -5,6 +5,14 @@ private:
       double maxHealth;
       double damage;
       int id;
+
+      int width;
+      int height; //get from sprite size 
+		  //todo(krekr) do a function to get image size
+      int x;
+      int y;
+
+
 public:
       player(double health, double maxHealth, double damage, int id);
       ~player();
@@ -12,6 +20,8 @@ public:
       double setMaxHealth(double x);
       double setDamage(double x);
       double changeId(int x);
+	
+      int getPos();
 
       double getHealth();
       double getMaxHealth();
