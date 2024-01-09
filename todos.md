@@ -4,7 +4,7 @@
 
 ## prototype
 - [] enemy object
-- [] player object
+- [x] player object
 - [] power ups
 - [] stats for player
 - [] weapon system

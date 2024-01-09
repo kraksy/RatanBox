@@ -24,10 +24,10 @@ class enemy
 
 enemy(std::string String, int number, int damage)
 {
-    health = health;
-    name = name;
-    maxHealth = health;
-    damage = damage;
+    health-> health;
+    name -> name;
+    maxHealth -> health;
+    damage -> damage;
     id = for (int i = 0; i < id; i++) {this.id == i};
 }
 
@@ -38,45 +38,45 @@ std::string enemy::getName()
 
 int enemy::getHealth()
 {
-    return this.health;
-}
+    return health;
+};
 
 int enemy::getMaxHealth()
 {
-    return this.maxHealth;
+    return maxHealth;
 }
 
 int enemy::getId()
 {
-    return this.id;
+    return id;
 }
 
 int enemy::getDamage()
 {
-    return this.damage
+    return damage
 }
 
 int enemy::setDamage(int damage)
 {
-    this.damage = damage;
+    damage = damage;
 }
 
 enemy::setHealth(int health)
 {
-    this.health = health;
+    health = health;
 }
 
 enemy::setId(int id)
 {
-    this.id = id;
+    id = id;
 }
 
 enemy::setMaxHealth(int maxHealth)
 {
-    this.getMaxHealth = maxHealth;
+    getMaxHealth = maxHealth;
 }
 
 enemy::setName(String name)
 {
-    this.name = name;
+    name = name;
 }

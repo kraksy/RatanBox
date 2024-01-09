@@ -5,7 +5,9 @@ private:
 public:
       checkCollision();
       ~checkCollision();
-      bool checkVectorCollision(int x1, int y1, int x2, int y2);
+      bool chech1VectorCollision(int x, int y);
+      bool check2VectorCollision(int x1, int y1, int x2, int y2);
+      bool check4VectorCollision(int x1, int y1, int x2, int y2, int x3, int y3, int x4, int y4);
 };
 
 checkCollision::checkCollision()
@@ -16,7 +18,19 @@ checkCollision::~checkCollision()
 {
 }
 
-bool checkCollision::checkVectorCollision(int x1, int y1, int x2, int y2)
+bool checkCollision::chech1VectorCollision(int x, int y)
+{
+      if ( x == y )
+      {
+            return true;
+      }
+      else
+      {
+            return false;
+      }
+}
+
+bool checkCollision::check2VectorCollision(int x1, int y1, int x2, int y2)
 {
       if (x1 == x2 && y1 == y2)
       {
@@ -27,4 +41,8 @@ bool checkCollision::checkVectorCollision(int x1, int y1, int x2, int y2)
             return false;
       }
 }
-      
+
+bool checkCollision::check4VectorCollision(int x, int y, int x1, int y1, int x2, int y2, int x3, int y3, int x4, int y4)
+{
+      if ()
+}
