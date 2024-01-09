@@ -43,7 +43,7 @@ bool checkCollision::chech1VectorCollision(double x, double y)
 
 bool checkCollision::chech1VectorCollision(vectors::vec1)
 {
-      
+
 }
 
 bool checkCollision::check2VectorCollision(int x1, int y1, int x2, int y2)
@@ -56,6 +56,11 @@ bool checkCollision::check2VectorCollision(int x1, int y1, int x2, int y2)
       {
             return false;
       }
+}
+
+bool checkCollision::check3VectorCollision()
+{
+      
 }
 
 bool checkCollision::check4VectorCollision(int x, int y, int x1, int y1, int x2, int y2, int x3, int y3, int x4, int y4)

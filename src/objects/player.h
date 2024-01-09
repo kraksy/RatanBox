@@ -4,24 +4,25 @@ private:
       double health;
       double maxHealth;
       double damage;
-      int id;
+      //int id;
 
       int width;
       int height; //get from sprite size 
 		  //todo(krekr) do a function to get image size
-      int x;
-      int y;
-
-
+      double x;
+      double y;
+      double speed;
 public:
       player(double health, double maxHealth, double damage, int id);
       ~player();
-      double setHealth(double x);
-      double setMaxHealth(double x);
-      double setDamage(double x);
-      double changeId(int x);
+      void setHealth(double x);
+      void setMaxHealth(double x);
+      void setDamage(double x);
+      //void changeId(int x);
 	
       int getPos();
+      void movePos(double x, double y) // make a transform function 
+      // and combine it with the input function 
 
       double getHealth();
       double getMaxHealth();

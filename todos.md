@@ -3,14 +3,24 @@
 # todos
 
 ## prototype
+- [] world 
+    - [x] tiles 
 - [] enemy object
-    - [] movement
+    - [] movement    
+    - [] collision means damage to other object  
 - [x] player object
     - [] player position management "movement"
+        - [] prototype function
+            - [] it has to get the inputs and set values
+        - [] inputs system {it has to be done with the sdl}
     - [] power ups
-    - [] stats for player
+        - [] maybe I would like to have power ups just like from original doom 
+    - [] stats for player // choose path
+        - [] take stereotypical rpg stats
+        - [] dark souls 
+        - [] brainstorm about it and make it simple like 3 stats
 - [] weapon system
-- [] damage for objects
+    - [] damage for objects
 - [] "collision system" if they share position , yell to the logger
 
 - [] game loop
@@ -22,9 +32,10 @@
 --- 
 side
 - [x] make a logger
+- [] transform vector function
+    - [] it would be cool if I can involve like deltaTime innit 
 - [] make a image size getter function
 - [] find a way to use sprites 
-//todo(krekr) brainstorm about this later
 ### finishing prototype results in moving on the the next stage 
 
 ## side todos 
