@@ -7,10 +7,8 @@ set "include_dir=%project_dir%\lib\include"
 mkdir "%build_dir%"
 pushd "%build_dir%"
 
-for /D %%d in ("%include_dir%\*") do (
-    set "INCLUDE=%%d;%INCLUDE%"
-    echo Added %%d to INCLUDE
-)
 
-cl -Zi -EHsc -Fe "%project_dir%\src\main.cpp" user32.lib Gdi32.lib glfw3.lib 
+
+call "D:\apps\VS\VC\Auxiliary\Build\vcvarsall.bat" x64
+cl -Zi -EHsc -Fe "%project_dir%\src\main.cpp" user32.lib Gdi32.lib
 popd

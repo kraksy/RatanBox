@@ -3,6 +3,8 @@
 # todos
 
 ## prototype
+- [] render on screen
+      -[]
 - [] world 
     - [x] tiles 
 - [] enemy object
