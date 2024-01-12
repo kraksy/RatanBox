@@ -1,6 +1,6 @@
 #include <player.h>
 
-player::player(double health, double maxHealth, double damage, int id)
+player::player(double health, double maxHealth, double damage)
 {
       this->health = health;
       this->maxHealth = maxHealth;
@@ -9,7 +9,57 @@ player::player(double health, double maxHealth, double damage, int id)
 }
 
 player::~player()
-{1
+{
+}
+
+void player::setStrenght(int x)
+{
+	this->strenght = x;
+}
+
+void player::setTolerance(int x)
+{
+	this->tolerance = x;
+}
+
+void player::setNimbleness(int x)
+{
+	this->nimbleness = x;
+}
+
+void player::setUnderstanding(int x)
+{
+	this->understanding = x;
+}
+
+void player::setWillpower(int x)
+{
+	this->willpower = x;
+}
+
+int player::getStrenght()
+{
+	return this->strenght;
+}
+
+int player::getTolerance()
+{
+	return this->tolerance;
+}
+
+int player::getNimbleness()
+{
+	return this->nimbleness;
+}
+
+int player::getUnderstanding()
+{
+	return this->understanding;
+}
+
+int player::getWillpower()
+{
+	return this->willpower;
 }
 
 double player::setHealth(double x)

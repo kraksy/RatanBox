@@ -9,6 +9,40 @@
 
 static bool Running;
 
+internal void
+Win32ResizeDIBSection(int Width, int Height)
+  {
+  HBITMAP CreateDIBSection(
+  HDC              hdc,
+  const BITMAPINFO *pbmi,
+  UINT             usage,
+  VOID             **ppvBits,
+  HANDLE           hSection,
+  DWORD            offset
+  );
+
+}
+
+internal void
+Win32UpdateWindow(HDC DeviceContext, RECT *WindowRect, int X, int Y, int Width, int Height)
+{
+  StretchDIBits(
+  HDC              hdc,
+  int              xDest,
+  int              yDest,
+  int              DestWidth,
+  int              DestHeight,
+  int              xSrc,
+  int              ySrc,
+  int              SrcWidth,
+  int              SrcHeight,
+  const VOID       *lpBits,
+  const BITMAPINFO *lpbmi,
+  UINT             iUsage,
+  DWORD            rop
+  );
+}
+
 LRESULT CALLBACK MainWindowCallback(
   HWND window,
   UINT message,
@@ -23,7 +57,11 @@ LRESULT CALLBACK MainWindowCallback(
     // if done this way , vars gonna be exclusive in the code blocks
    case WM_SIZE:
    {
-    OutputDebugStringA("WM_SIZE\n");
+	    RECT ClientRectangle;
+	    GetClientRect(window, &ClientRectangle);
+	    int Height = ClientRectangle.bottom - ClientRectangle.top; 
+    	int Width = ClientRectangle.right - ClientRectangle.left; 
+	    Win32ResizeDIBSection(Width, Height);
    } break; 
 
    case WM_DESTROY:

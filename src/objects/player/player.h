@@ -2,7 +2,7 @@ class player
 {
 private:
       double health;
-      double maxHealth;
+      double maxHealth; // change to float
       double damage;
       //int id;
 
@@ -20,8 +20,10 @@ private:
       int understanding; // crafting and magic stuff
       int willpower; // stamina and magic stuff
 
+      std::string pilar;
+
 public:
-      player(double health, double maxHealth, double damage, int id);
+      player(double health, double maxHealth, double damage);
       ~player();
       void setHealth(double x);
       void setMaxHealth(double x);
@@ -41,6 +43,10 @@ public:
       int getUnderstanding();
       int getWillpower();
 
+      void setPillar();
+      void removePillar();
+      std::string getPillar();
+
       //movement
       int getPos();
       void movePos(double x, double y); // make a transform function 
@@ -50,5 +56,5 @@ public:
       double getHealth();
       double getMaxHealth();
       double getDamage();
-      int getId();
+      //int getId();
 };

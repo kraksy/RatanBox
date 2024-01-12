@@ -40,11 +40,14 @@
   - [] make a way so player can upgrade stats
 
 ---
-side
+side, 
 
 - [x] make a logger
 - [] function for counting lines of code
 - [] math function classes
+  - [] math functions that doesnt require other math functons like sum
+  - [] square , square root function
+  - [] sin , cos functions 
 - [] transform vector function
   - [] it would be cool if I can involve like deltaTime innit
 - [] make a image size getter function
