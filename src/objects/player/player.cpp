@@ -1,4 +1,5 @@
 #include <player.h>
+#include <iostream>
 
 player::player(double health, double maxHealth, double damage)
 {
@@ -12,9 +13,9 @@ player::~player()
 {
 }
 
-void player::setStrenght(int x)
+void player::setStrength(int x)
 {
-	this->strenght = x;
+      this->strength = x;
 }
 
 void player::setTolerance(int x)
@@ -37,9 +38,9 @@ void player::setWillpower(int x)
 	this->willpower = x;
 }
 
-int player::getStrenght()
+int player::getStrength()
 {
-	return this->strenght;
+      return this->strength;
 }
 
 int player::getTolerance()
@@ -62,22 +63,17 @@ int player::getWillpower()
 	return this->willpower;
 }
 
-double player::setHealth(double x)
+void player::setHealth(double x)
 {
       this->health = x;
 }
 
-double player::setMaxHealth(double x)
+void  player::setMaxHealth(double x)
 {
       this->maxHealth = x;
 }
 
-double player::setDamage(double x)
-{
-      this->damage = x;
-}
-
-double player::changeId(int x)
+void  player::setDamage(double x)
 {
       this->damage = x;
 }

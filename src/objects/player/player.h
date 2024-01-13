@@ -1,3 +1,5 @@
+#include <iostream>
+
 class player
 {
 private:
@@ -25,6 +27,7 @@ private:
 public:
       player(double health, double maxHealth, double damage);
       ~player();
+
       void setHealth(double x);
       void setMaxHealth(double x);
       void setDamage(double x);

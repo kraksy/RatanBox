@@ -10,12 +10,21 @@ class transform
         void rotate();
 }
 
+transform::transform()
+{
+}
+
+transform::~transform()
+{
+}
+
 void transform::move(float x, float y)
 {
-
+    this->x = x;
+    this->y = y;
 }
 
 void transform::rotate()
 {
-
+    //todo
 }
