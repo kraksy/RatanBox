@@ -1,4 +1,7 @@
-
+CC = gcc
+CFLAGS = -g -Wall
+LIBS = -lm
+OBJ = main.o Window.o
 includePath = -I include/glm
 libraryPath = -L /library
 
