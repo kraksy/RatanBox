@@ -1,6 +1,8 @@
 #include <player.h>
 #include <iostream>
 
+// todo fix the values
+
 player::player(double health, double maxHealth, double damage)
 {
       this->health = health;
@@ -12,6 +14,10 @@ player::player(double health, double maxHealth, double damage)
 player::~player()
 {
 }
+
+// setters
+
+void 
 
 void player::setStrength(int x)
 {
@@ -38,6 +44,28 @@ void player::setWillpower(int x)
 	this->willpower = x;
 }
 
+void player::setHealth(double x)
+{
+      this->health = x;
+}
+
+void  player::setMaxHealth(double x)
+{
+      this->maxHealth = x;
+}
+
+void  player::setDamage(double x)
+{
+      this->damage = x;
+}
+
+// getters
+
+std::string player::getPillar(std::string x)
+{
+      this->pillar = x;
+}
+
 int player::getStrength()
 {
       return this->strength;
@@ -61,21 +89,6 @@ int player::getUnderstanding()
 int player::getWillpower()
 {
 	return this->willpower;
-}
-
-void player::setHealth(double x)
-{
-      this->health = x;
-}
-
-void  player::setMaxHealth(double x)
-{
-      this->maxHealth = x;
-}
-
-void  player::setDamage(double x)
-{
-      this->damage = x;
 }
 
 double player::getHealth()

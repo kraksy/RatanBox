@@ -3,16 +3,16 @@
 class player
 {
 private:
-      double health;
-      double maxHealth; // change to float
-      double damage;
+      float health;
+      float maxHealth; // change to float
+      float damage;
       //int id;
 
       int width;
       int height; //get from sprite size 
 		  //todo(krekr) do a function to get image size
-      double x;
-      double y;
+      float x;
+      float y;
       //double speed; // I could get this from like dex stat
 
       // base stats
@@ -22,15 +22,15 @@ private:
       int understanding; // crafting and magic stuff
       int willpower; // stamina and magic stuff
 
-      std::string pilar;
+      std::string pillar;
 
 public:
-      player(double health, double maxHealth, double damage);
+      player(float health, float maxHealth, float damage);
       ~player();
 
-      void setHealth(double x);
-      void setMaxHealth(double x);
-      void setDamage(double x);
+      void setHealth(float x);
+      void setMaxHealth(float x);
+      void setDamage(float x);
       //void changeId(int x);
 
       //stats
@@ -46,18 +46,19 @@ public:
       int getUnderstanding();
       int getWillpower();
 
-      void setPillar();
+      // pillars of :gods: ?
+      std::string setPillar(std::string x);
       void removePillar();
-      std::string getPillar();
+      void getPillar();
 
       //movement
       int getPos();
-      void movePos(double x, double y); // make a transform function 
+      void movePos(float x, float y); // make a transform function 
       // and combine it with the input function 
 
       //getters
-      double getHealth();
-      double getMaxHealth();
-      double getDamage();
+      float getHealth();
+      float getMaxHealth();
+      float getDamage();
       //int getId();
 };
