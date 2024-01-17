@@ -96,7 +96,7 @@ double player::getHealth()
       return this->health;
 }
 
-double player:getMaxHealth()
+double player::getMaxHealth()
 {
       return this->maxHealth;
 }
