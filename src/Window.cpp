@@ -25,7 +25,6 @@ Win32ResizeDIBSection(int Width, int Height)
   HANDLE           hSection,
   DWORD            offset
   );
-
 }
 
 internal void
@@ -48,7 +47,7 @@ Win32UpdateWindow(HDC DeviceContext, RECT *WindowRect, int X, int Y, int Width, 
   );
 }
 
-LRESULT CALLBACK MainWindowCallback(
+LRESULT CALLBACK Win32MainWindowCallback(
   HWND window,
   UINT message,
   WPARAM WParam,
@@ -89,26 +88,13 @@ LRESULT CALLBACK MainWindowCallback(
    case WM_PAINT:
    {
     PAINTSTRUCT Paint;
-    HDC DeviceContex = BeginPaint(
-      window, &Paint
-    );
+    HDC DeviceContex = BeginPaint(window, &Paint);
     int X = Paint.rcPaint.left;
     int Y = Paint.rcPaint.top;
     int Height = Paint.rcPaint.bottom - Paint.rcPaint.top; 
     int Width = Paint.rcPaint.right - Paint.rcPaint.left; 
-    static DWORD Operation = WHITENESS;
-    PatBlt(DeviceContex, X, Y, Width, Height ,Operation);
-    if(Operation = WHITENESS)
-    {
-      Operation = BLACKNESS;
-    }
-    else
-    {
-      Operation = WHITENESS;
-    }
-    EndPaint(
-      window, &Paint
-    );
+    Win32UpdateWindow(window ,X, Y, Width, Height);
+    EndPaint(window, &Paint);
    }break;
 
    default:
@@ -131,7 +117,7 @@ int CALLBACK WinMain(
   
   WNDCLASS WindowClass = {};     
   WindowClass.style = CS_OWNDC|CS_HREDRAW|CS_VREDRAW;
-  WindowClass.lpfnWndProc = MainWindowCallback;
+  WindowClass.lpfnWndProc = Win32MainWindowCallback;
   WindowClass.hInstance = hInstance;
   // WindowClass.hIcon;
   WindowClass.lpszClassName = "TestClass";

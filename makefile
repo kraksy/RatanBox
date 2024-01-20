@@ -1,17 +1,15 @@
-CC = gcc
+CC = g++
 CFLAGS = -g -Wall
-LIBS = -lm
+LIBS = -lm -lstdc++
 OBJ = main.o Window.o
 includePath = -I include/glm
 libraryPath = -L /library
 
 main:
-	echo "building main.cpp"
-	gcc src/main.cpp $(includePath) $(libraryPath) 
-
+	$(CC) src/main.cpp $(includePath) $(libraryPath) $(LIBS) -o main
 Window : 
 	echo "building window.cpp"
-	gcc src/Window.cpp
-	
-clean : 
+	$(CC) src/Window.cpp $(LIBS)
+clean :
+	rm -fr *.exe *.o *.out
 	echo "cleaned"

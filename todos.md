@@ -40,7 +40,7 @@
   - [] make a way so player can upgrade stats
 
 ---
-side, 
+side,
 
 - [x] make a logger
 - [] function for counting lines of code
