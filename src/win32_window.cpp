@@ -1,50 +1,51 @@
 #include <windows.h>
 #include <iostream>
 
-
-
 // update 2024-15-01
-
-
-
 
 #define internal static
 #define local_persist static
 #define global_variable static
 
-static bool Running;
+global_variable bool Running;
+global_variable BITMAPINFO BitmapInfo;
+global_variable void *BitmapMemory;
+global_variable HBITMAP BitmapHandle;
 
 internal void
 Win32ResizeDIBSection(int Width, int Height)
+{
+  if (BitmapHandle)
   {
-  HBITMAP CreateDIBSection(
-  HDC              hdc,
-  const BITMAPINFO *pbmi,
-  UINT             usage,
-  VOID             **ppvBits,
-  HANDLE           hSection,
-  DWORD            offset
-  );
+    DeleteObject(BitmapHandle);
+  }
+
+  BitmapInfo.bmiHeader.biSize = sizeof(BitmapInfo.bmiHeader);
+  BitmapInfo.bmiHeader.biWidth = Width;
+  BitmapInfo.bmiHeader.biHeight = Height;
+  BitmapInfo.bmiHeader.biPlanes = 1;
+  BitmapInfo.bmiHeader.biBitCount = 32;
+  BitmapInfo.bmiHeader.biCompression = BI_RGB;
+
+  HDC DeviceContext = GetCompatibleDC(0);
+  BitmapHandle = CreateDIBSection(
+  DeviceContext, &BitmapInfo,
+  DIB_RGB_COLORS,
+  &BitmapMemory,
+  0, 0);
+
+  ReleaseDC(0, DeviceContext);
 }
 
 internal void
-Win32UpdateWindow(HDC DeviceContext, RECT *WindowRect, int X, int Y, int Width, int Height)
+Win32UpdateWindow(HDC DeviceContext, int X, int Y, int Width, int Height)
 {
-  StretchDIBits(
-  HDC              hdc,
-  int              xDest,
-  int              yDest,
-  int              DestWidth,
-  int              DestHeight,
-  int              xSrc,
-  int              ySrc,
-  int              SrcWidth,
-  int              SrcHeight,
-  const VOID       *lpBits,
-  const BITMAPINFO *lpbmi,
-  UINT             iUsage,
-  DWORD            rop
-  );
+  StretchDIBits(DeviceContext,
+                              X, Y, Width, Height, 
+                              X, Y, Width, Height, 
+                              const VOID  *lpBits,
+                              const BITMAPINFO  *lpbmi,
+                              DIB_RGB_COLORS, SRCCOPY);
 }
 
 LRESULT CALLBACK Win32MainWindowCallback(

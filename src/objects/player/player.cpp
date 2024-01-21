@@ -1,14 +1,11 @@
 #include <player.h>
 #include <iostream>
 
-// todo fix the values
-
-player::player(double health, double maxHealth, double damage)
+player::player(float health, float maxHealth, float damage)
 {
       this->health = health;
       this->maxHealth = maxHealth;
       this->damage = damage;
-      //this->id = id; // there no need for id if no multiplayer
 }
 
 player::~player()
@@ -16,8 +13,6 @@ player::~player()
 }
 
 // setters
-
-void 
 
 void player::setStrength(int x)
 {
@@ -44,27 +39,27 @@ void player::setWillpower(int x)
 	this->willpower = x;
 }
 
-void player::setHealth(double x)
+void player::setHealth(float x)
 {
       this->health = x;
 }
 
-void  player::setMaxHealth(double x)
+void  player::setMaxHealth(float x)
 {
       this->maxHealth = x;
 }
 
-void  player::setDamage(double x)
+void  player::setDamage(float x)
 {
       this->damage = x;
 }
 
-// getters
-
-std::string player::getPillar(std::string x)
+std::string player::setPillar(std::string x)
 {
       this->pillar = x;
 }
+
+// getters
 
 int player::getStrength()
 {
@@ -91,22 +86,17 @@ int player::getWillpower()
 	return this->willpower;
 }
 
-double player::getHealth()
+float player::getHealth()
 {
       return this->health;
 }
 
-double player::getMaxHealth()
+float player::getMaxHealth()
 {
       return this->maxHealth;
 }
 
-double player::getDamage()
+float player::getDamage()
 {
       return this->damage;
-}
-
-int player::getId()
-{
-      return this->id;
 }

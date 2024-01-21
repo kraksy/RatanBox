@@ -1,13 +1,12 @@
 # what next ?
 
 # GOAL : SIMPLICITY
-
 # todos
-
 ## prototype
 
 - [] render on screen
-      - [x] win32 window
+      - [] win32 window
+        - [] window with loop
       - [] propper updating
       - [] way to render shit in the window
 - [] world
@@ -26,8 +25,8 @@
     - [] maybe I would like to have power ups just like from original doom
   - [x] stats for player // choose path //replaybility focus
     - [x] take stereotypical rpg stats
-    - [x] dark souls
-    - [x] brainstorm about it and make it simple like 3 stats
+    - [x] dark souls X
+    - [x] brainstorm about it and make it simple like 3 stats 
   - [] builds for replaybility // brainstorm
 - [] weapon system
   - [] damage for objects
@@ -47,7 +46,7 @@ side,
 - [] math function classes
   - [] math functions that doesnt require other math functons like sum
   - [] square , square root function
-  - [] sin , cos functions 
+  - [] sin , cos functions
 - [] transform vector function
   - [] it would be cool if I can involve like deltaTime innit
 - [] make a image size getter function
