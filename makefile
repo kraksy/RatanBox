@@ -1,12 +1,12 @@
 CC = g++
 CFLAGS = -g -Wall
-LIBS = -lm -lstdc++
+LIBS = -lm -lstdc++ -lgdi32
 OBJ = main.o Window.o
-includePath = -I src/objects/player -I src/utils # Point to the directory, not the file
+includePath = -I src/objects/player -I src/utils 
 libraryPath = -L /library
 
 main:
-	$(CC) src/ratan.cpp $(includePath) $(libraryPath) $(LIBS) -o main
+	$(CC) src/ratan.cpp $(includePath) $(libraryPath) $(LIBS) -o ratan
 Window : 
 	echo "building window.cpp"
 	$(CC) src/Window.cpp $(LIBS)

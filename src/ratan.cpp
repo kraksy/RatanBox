@@ -6,6 +6,7 @@
 #include <logger.h>
 
 static logger log;
+static bool Running;
 
 LRESULT CALLBACK WndProc(
       HWND   hWnd,
@@ -70,15 +71,28 @@ int WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpCmdLine, int n
       wc.lpszClassName = "WindowClass";
       wc.hIconSm = LoadIcon(NULL, IDI_APPLICATION);
 
-      if (!hwnd)
-      {
-            MessageBox(NULL, "Window Creation Failed!", "Error!", MB_ICONEXCLAMATION | MB_OK);
-            return 1;
-      }
-
       if (!RegisterClassEx(&wc))
       {
-            MessageBox(NULL, "Window Registration Failed!", "Error!", MB_ICONEXCLAMATION | MB_OK);
+            log.log("Window Registration Failed!");
+            if (hwnd)
+            {
+                  Running = true;
+                  MSG msg = { };
+
+                  while (GetMessage(&msg, NULL, 0, 0))
+                  {
+                        TranslateMessage(&msg);
+                        DispatchMessage(&msg);
+                  }
+
+                  ShowWindow(hwnd, nCmdShow);
+                  UpdateWindow(hwnd);
+            }
+            else
+            {
+                  log.log("Window Creation Failed!");
+            }
+            
             return 1;
       }
 
