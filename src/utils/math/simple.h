@@ -2,143 +2,33 @@
 #ifndef SIMPLE_H
 #define SIMPLE_H
 
-class simple()
+class simple
 {
-    public:
-        simple();
-        ~simple();
+private:
+    /* data */
+public:
+    simple();
+    ~simple();
 
-        int sum();
-        int lowestNum();
-        int biggestNum();
+    int add(int, int);
+    int deduct(int, int);
+    int times(int, int);
+    int devide(int, int);
 
-        float sqr(float x);
-        float sqrt(float x);
+    int sum(int list[]);
+    int lowestNum(int list[]);
+    int biggestNum(int list[]);
 
-        float cos();
-        float sin();
-        float tan();
-        float log();
+    float sqr(float);
+    float sqrt(float);
 
-}
+    float sqr(int);
+    float sqrt(int);
 
-simple::simple()
-{
-}
-
-simple::~simple()
-{
-}
-
-int simple::sum()
-{
-    int a = 0;
-    for (i = 0; i < x; i++)
-    {
-        a = a + number;
-    }
-
-    return a;
-}
-
-int simple::lowestNum()
-{
-    int a = 0;
-    for (i = 0; i < x; i++)
-    {
-        if (a > number)
-        {
-            a = number;
-        }
-    }
-
-    return a;
-}
-
-int simple::biggestNum()
-{
-    int a = 0;
-    for (i = 0; i < x; i++)
-    {
-        if (a < number)
-        {
-            a = number;
-        }
-    }
-
-    return a;
-}
-
-float simple::sqr(float x)
-{
-    float a = 0.0f;
-    
-    for (i = 0; i < x; i++)
-    {
-        a = a + number;
-    }
-
-    return a;
-}
-
-float simple::sqrt(float x)
-{
-    float a = 0.0f;
-    
-    for (i = 0; i < x; i++)
-    {
-        a = a + number;
-    }
-
-    return a;
-}
-
-float simple::cos()
-{
-    float a = 0.0f;
-    
-    for (i = 0; i < x; i++)
-    {
-        a = a + number;
-    }
-
-    return a;
-}
-
-float simple::sin()
-{
-    float a = 0.0f;
-    
-    for (i = 0; i < x; i++)
-    {
-        a = a + number;
-    }
-
-    return a;
-}
-
-float simple::tan()
-{
-    float a = 0.0f;
-    
-    for (i = 0; i < x; i++)
-    {
-        a = a + number;
-    }
-
-    return a;
-}
-
-float simple::log()
-{
-    float a = 0.0f;
-    
-    for (i = 0; i < x; i++)
-    {
-        a = a + number;
-    }
-
-    return a;
-}
+    float cos(float);  
+    float sin(float);   
+    float tan(float);     
+    float log(float);  
+};
 
 #endif // SIMPLE_H

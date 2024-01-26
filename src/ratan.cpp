@@ -1,12 +1,11 @@
 
-#include <windows.h>
+#include <windows.h> // be warry of error cuz windows libs //MICROSOFT
 #include <iostream>
 
 #include <player.cpp>
 #include <logger.h>
 
 static logger log;
-static bool running;
 static bool Running;
 
 LRESULT CALLBACK WndProc(

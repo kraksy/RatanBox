@@ -8,7 +8,9 @@ class logger
 public:
     logger();
     ~logger();
-    void log(const char* message);
+    const char* gprint(const char* message); 
+    void print(const char* message);
+    
 };
 
 logger::logger()
@@ -19,9 +21,18 @@ logger::~logger()
 {
 }
 
-void logger::log(const char* message)
+void logger::print(const char* message)
 {
-      std::cout << message << std::endl;
+    std::cout << message << std::endl;
 }
+
+const char* logger::gprint(const char* message)
+{
+    std::cout << message << std::endl;
+    return message;
+}
+
+
+
 
 #endif // LOGGER_H

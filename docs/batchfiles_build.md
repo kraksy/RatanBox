@@ -1,3 +1,6 @@
+
+# LEGACY BUILDING
+
 # building with batch files through cmd
 # Visual studio compiler 
 
@@ -10,10 +13,6 @@
 
 # changing batch files to your liking
 
-## build settings 
-- hop into `build` 
-
-
 ## shell settings
 
 - shell.bat has list of directories you can change
@@ -24,18 +23,4 @@ set include=lib\include;%include%
 set lib=lib\library;%library%
 
 :: after = , put your own path
-```
-
-# building with gnu make 
-# using whatever compiler 
-
-## make settings 
-
-- make {option}
-    - main
-    - window
-    - clean
-
-```makefile    
-
 ```
