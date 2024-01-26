@@ -7,6 +7,7 @@
 
 static logger log;
 static bool running;
+static bool Running;
 
 LRESULT CALLBACK WndProc(
     HWND hWnd,
@@ -72,23 +73,24 @@ int WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpCmdLine, int n
 
       if (!RegisterClassEx(&wc))
       {
-            MessageBox(NULL, "Window Registration Failed!", "Error!", MB_ICONEXCLAMATION | MB_OK);
-
+            log.log("Window Registration Failed!");
             if (hwnd)
             {
-                  while (running)
+                  Running = true;
+                  MSG msg = {};
+
+                  while (GetMessage(&msg, NULL, 0, 0))
                   {
-                        // code
+                        TranslateMessage(&msg);
+                        DispatchMessage(&msg);
                   }
-                  else
-                  {
-                        break;
-                  }
+
+                  ShowWindow(hwnd, nCmdShow);
+                  UpdateWindow(hwnd);
             }
-            if (!hwnd)
+            else
             {
-                  MessageBox(NULL, "Window Creation Failed!", "Error!", MB_ICONEXCLAMATION | MB_OK);
-                  return 1;
+                  log.log("Window Creation Failed!");
             }
 
             return 1;
