@@ -6,7 +6,7 @@ includePath = -I src/objects/player -I src/utils
 libraryPath = -L /library
 
 main:
-	$(CC) src/ratan.cpp $(includePath) $(libraryPath) $(LIBS) -o ratan
+	$(CC) src\win32_window.cpp $(includePath) $(libraryPath) $(LIBS) -o ratan
 Window : 
 	echo "building window.cpp"
 	$(CC) src/Window.cpp $(LIBS)

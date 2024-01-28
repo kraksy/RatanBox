@@ -8,9 +8,11 @@
 #define global_variable static
 
 global_variable bool Running;
+
 global_variable BITMAPINFO BitmapInfo;
 global_variable void *BitmapMemory;
 global_variable HBITMAP BitmapHandle;
+global_variable HDC BitmapDeviceContext; 
 
 internal void
 Win32ResizeDIBSection(int Width, int Height)
@@ -18,6 +20,10 @@ Win32ResizeDIBSection(int Width, int Height)
   if (BitmapHandle)
   {
     DeleteObject(BitmapHandle);
+  }
+  if (!BitmapDeviceContext)
+  {
+    BitmapDeviceContext = CreateCompatibleDC(0);
   }
 
   BitmapInfo.bmiHeader.biSize = sizeof(BitmapInfo.bmiHeader);
@@ -27,25 +33,22 @@ Win32ResizeDIBSection(int Width, int Height)
   BitmapInfo.bmiHeader.biBitCount = 32;
   BitmapInfo.bmiHeader.biCompression = BI_RGB;
 
-  HDC DeviceContext = GetCompatibleDC(0);
   BitmapHandle = CreateDIBSection(
-  DeviceContext, &BitmapInfo,
-  DIB_RGB_COLORS,
-  &BitmapMemory,
+    BitmapDeviceContext, &BitmapInfo,
+    DIB_RGB_COLORS,
+    &BitmapMemory,
   0, 0);
-
-  ReleaseDC(0, DeviceContext);
 }
 
 internal void
 Win32UpdateWindow(HDC DeviceContext, int X, int Y, int Width, int Height)
 {
   StretchDIBits(DeviceContext,
-                              X, Y, Width, Height, 
-                              X, Y, Width, Height, 
-                              const VOID  *lpBits,
-                              const BITMAPINFO  *lpbmi,
-                              DIB_RGB_COLORS, SRCCOPY);
+    X, Y, Width, Height, 
+    X, Y, Width, Height, 
+    BitmapMemory,
+    &BitmapInfo,
+    DIB_RGB_COLORS, SRCCOPY);
 }
 
 LRESULT CALLBACK Win32MainWindowCallback(
@@ -86,17 +89,17 @@ LRESULT CALLBACK Win32MainWindowCallback(
     OutputDebugStringA("WM_ACTIVATEAPP\n");
    } break;
 
-   case WM_PAINT:
-   {
-    PAINTSTRUCT Paint;
-    HDC DeviceContex = BeginPaint(window, &Paint);
-    int X = Paint.rcPaint.left;
-    int Y = Paint.rcPaint.top;
-    int Height = Paint.rcPaint.bottom - Paint.rcPaint.top; 
-    int Width = Paint.rcPaint.right - Paint.rcPaint.left; 
-    Win32UpdateWindow(window ,X, Y, Width, Height);
-    EndPaint(window, &Paint);
-   }break;
+  case WM_PAINT:
+  {
+   PAINTSTRUCT Paint;
+   HDC DeviceContex = BeginPaint(window, &Paint);
+   int X = Paint.rcPaint.left;
+   int Y = Paint.rcPaint.top;
+   int Height = Paint.rcPaint.bottom - Paint.rcPaint.top; 
+   int Width = Paint.rcPaint.right - Paint.rcPaint.left; 
+   Win32UpdateWindow(DeviceContex, X, Y, Width, Height);
+   EndPaint(window, &Paint);
+  }break;
 
    default:
    { 

@@ -5,6 +5,10 @@
 
 class logger
 {
+private:
+    enum Level {
+        INFO_LEVEL, WARNING_LEVEL, ERROR_LEVEL, FATAL_LEVEL
+    }; // so when creating a log in code , this will work as the first argument to the log function
 public:
     logger();
     ~logger();

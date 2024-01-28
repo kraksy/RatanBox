@@ -72,7 +72,7 @@ int WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpCmdLine, int n
 
       if (!RegisterClassEx(&wc))
       {
-            log.log("Window Registration Failed!");
+            log.print("Window Registration Failed!");
             if (hwnd)
             {
                   Running = true;
