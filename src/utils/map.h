@@ -1,4 +1,4 @@
-class map()
+class map
 {
     private:
         int width;
@@ -9,5 +9,6 @@ class map()
 
         float rotation;
     public:
-        int calculateTiles();
-}
+        
+};
+
