@@ -8,7 +8,7 @@ static logger log;
 
 int main()
 {
-      log.print("kokot");
-
+      log.print(log.INFO_LEVEL, "kokot");
+      
       return 0;
 }

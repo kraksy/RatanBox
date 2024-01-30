@@ -47,9 +47,9 @@ public:
       int getWillpower();
 
       // pillars of :gods: ?
-      std::string setPillar(std::string x);
+      void setPillar(std::string x);
       void removePillar();
-      void getPillar();
+      std::string getPillar();
 
       //movement
       int getPos();

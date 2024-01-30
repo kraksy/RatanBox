@@ -54,12 +54,17 @@ void  player::setDamage(float x)
       this->damage = x;
 }
 
-std::string player::setPillar(std::string x)
+void player::setPillar(std::string x)
 {
       this->pillar = x;
 }
 
 // getters
+
+std::string player::getPillar()
+{
+      return this->pillar;
+}
 
 int player::getStrength()
 {

@@ -1,6 +1,7 @@
 CC = g++
 CFLAGS = -g -Wall
 LIBS = -lm -lstdc++ -lgdi32
+LLIBS = -lm 
 OBJ = main.o Window.o
 includePath = -I src/objects/player -I src/utils 
 libraryPath = -L /library
@@ -11,7 +12,7 @@ Window :
 	echo "building window.cpp"
 	$(CC) src/Window.cpp $(LIBS)
 linux :
-	$(CC) src/linuxWindow.cpp $(includePath) $(libraryPath) $(LIBS) -o main
+	$(CC) src/ratan.cpp $(includePath) $(libraryPath) $(LLIBS) -o ratan
 clean :
-	rm -fr *.exe *.o *.out
+	rm -fr *.exe *.o *.out *ratan
 	echo "cleaned"

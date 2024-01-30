@@ -5,9 +5,9 @@
 ## prototype
 
 - [] render on screen
-      - [] win32 window
-        - [] window with loop
-      - [] propper updating
+      - [x] win32 window
+        - [x] window with loop
+      - [x] propper updating
       - [] way to render shit in the window
 - [] world
   - [x] tiles
@@ -20,7 +20,7 @@
   - [] player position management "movement"
     - [] prototype function
       - [] it has to get the inputs and set values
-    - [] inputs system {it has to be done with the sdl}
+    - [] inputs system 
   - [] power ups
     - [] maybe I would like to have power ups just like from original doom
   - [x] stats for player // choose path //replaybility focus
