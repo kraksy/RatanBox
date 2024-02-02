@@ -14,4 +14,4 @@ something like soup rougelike
 ## main character
 
 - name: Hunter
-- gender or age: blank
+- gender or age: blank  / / I dont think I want to include such stuff in the game
