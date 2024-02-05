@@ -8,8 +8,7 @@
                 "${workspaceFolder}/src/utils",
                 "${workspaceFolder}/src/objects",
                 "${workspaceFolder}/src/objects/player",
-                "${workspaceFolder}/src/utils"
-            ],
+                "${workspaceFolder}/src/utils"            ],
             "defines": [
                 "_DEBUG",
                 "UNICODE",
