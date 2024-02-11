@@ -12,6 +12,8 @@
 #include <iostream>
 #include <windows.h>
 
+logger log;
+
 LRESULT CALLBACK WindowProc(HWND hwnd, UINT uMsg, WPARAM wParam, LPARAM lParam);
 
 int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpCmdLine, int nCmdShow) {
@@ -75,7 +77,9 @@ LRESULT CALLBACK WindowProc(HWND hwnd, UINT uMsg, WPARAM wParam, LPARAM lParam) 
             FillRect(hdc, &ps.rcPaint, (HBRUSH) (COLOR_WINDOW + 1));
             EndPaint(hwnd, &ps);
         }
-            return 0;
+        case WM_LBUTTONDOWN:
+            log.print(log.INFO_LEVEL, "left mouse button down");
+        return 0;
     }
 
     return DefWindowProc(hwnd, uMsg, wParam, lParam);
