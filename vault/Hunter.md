@@ -4,12 +4,12 @@
 
 - maybe I will make the character female for the joke
 - but I will not any age , because she will be non-Human 
-- lost memory ? v v  quite stereotypical for this type of character
+- lost memory ? v v  quite stereotypical for this type of character ^1a0a5f
 	- but with that I can implement that any Ability that character will acquire , but Hunter has it from start she was manufactured . . she just gets the access the moment she unlocked it
 - I don't want to make her instantly killer that is capable of killing anything
 	- maybe roll with the lost memory idea , and just she will start with the worst skills , like Kenshi-like bad state , so player can level up the character
 	- or maybe just she will be broken on the start of the game , and player need to collect scraps or advanced parts to fix hunter ^85daf7
-- I could make her like that she has her own mind , and the player is just "just pilot" that controls her body 
+- I could make her like that she has her own mind , and the player is just "just pilot" that controls her body  ^d86ca0
 	- and that can make a lot of interactions between player and the character , also can be somehow funny 
 - the robot race will be something prehistorical something that old civilization **forgot** here 
 ## Character Design

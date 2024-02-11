@@ -1,22 +1,16 @@
 CC = g++
 CFLAGS = -g -Wall
 LIBS = -lm -lstdc++ -lgdi32
-LLIBS = -lm 
 OBJ = main.o Window.o
 
-gameInclude = -I sdl/include -I src/objects/player -I src/utils 
-gameLibrary = -L sdl/lib
-
-includePath = -I src/objects/player -I src/utils 
-libraryPath = -L /library
-
-all:
-	$(CC) $(gameInclude) $(gameLibrary) -o ratan src\ratan.cpp -lmingw32 -lSDL2main -lSDL2
+includePath = -I src/objects/player -I src/utils -I src
+libraryPath = -L /library -L glfw
+main:
+	g++ src\ratan.cpp -I src/utils -I src -L /library -o main -lm -lstdc++ -lgdi32 -L glfw3.lib
 win32 : 
-	echo "building window.cpp"
-	$(CC) src/Window.cpp $(LIBS)
+	$(CC) src\win32_window.cpp $(includePath) $(libraryPath) -o win32_window $(LIBS)
 linux :
 	$(CC) src/ratan.cpp $(includePath) $(libraryPath) $(LLIBS) -o 
 clean :
-	rm -fr *.exe *.o *.out *ratan
+	del /F /Q *.exe *.o *.out
 	echo "cleaned"

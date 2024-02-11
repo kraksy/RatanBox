@@ -11,7 +11,7 @@
   handmadehero.org is the source of the code
 */
 
-// stoped at 32:54 ep 4
+// stoped at 36:03 ep 4
 
 #define internal static
 #define local_persist static
@@ -61,10 +61,20 @@ Win32ResizeDIBSection(int Width, int Height)
   uint8 *Row = (uint8 *)BitmapMemory;
   for (int Y = 0; Y < BitmapHeight; ++Y)
   {
-    uint32 *Pixel = (uint32 *)Row;
+    uint8 *Pixel = (uint8 *)Row;
     for (int X = 0; X < BitmapWidth; ++X)
     {
-      
+      *Pixel = 0;
+      ++Pixel;
+
+      *Pixel = 0;
+      ++Pixel;
+
+      *Pixel = 255;
+      ++Pixel;
+
+      *Pixel = 0;
+      ++Pixel;
     }
     Row += pitch;
   }
