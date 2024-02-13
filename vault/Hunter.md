@@ -15,11 +15,11 @@
 ## Character Design
 
 - Mainly I don't want her to be like hunter from risk of rain , so I will carefully look at some pics on Pinterest So there will be no problems with that
-- also when drawing the design I rly should make few states , like broken and after some fixes and upgrades , and design that could be used for end game or fully fixed state ( and that maybe can be first design that will be drawn , and then just broke it more and more till I get something for the start )
+- also when drawing the design I really should make few states , like broken and after some fixes and upgrades , and design that could be used for end game or fully fixed state ( and that maybe can be first design that will be drawn , and then just broke it more and more till I get something for the start )
 	![[Hunter#^85daf7]]
 - I don't think I want to make her somehow human , she will be 100% *robot* 
 - and also I should make characteristics for the *robots* , and also I should give them a name
-	- like few "models" or parts that I can mash up together to make another robots 
+	- like few "models" or parts that I can mash up together to make another robots  ^3f6fbb
 	- and also focus on like robots specializations so it looks different 
 
 #### **source**

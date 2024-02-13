@@ -2,6 +2,7 @@
 #ifndef LOGGER_H
 #define LOGGER_H
 #include <iostream>
+#include <fmt/core.h>
 
 class logger
 {
@@ -27,9 +28,7 @@ logger::~logger()
 
 void logger::print(logger::LogLevel const level, const char* message)
 {
-    std::cout << (level, message) << std::endl;
-
-    //<< std::format("[{}] {} | {} | {}"), static_cast<enum>(level),     
+    std::cout << fmt::format("[{}] {} | {} | {}", level) << std::endl;
 }
 
 const char* logger::gprint(logger::LogLevel const level, const char* message)

@@ -8,63 +8,26 @@
         "type": "tabs",
         "children": [
           {
-            "id": "473da5ad77be0f1a",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "vault.md",
-                "mode": "source",
-                "source": false
-              }
-            }
-          },
-          {
             "id": "d9cecdfaa14f0250",
             "type": "leaf",
             "state": {
               "type": "graph",
               "state": {}
             }
-          },
+          }
+        ]
+      },
+      {
+        "id": "67ae4fdb8f11fd54",
+        "type": "tabs",
+        "children": [
           {
-            "id": "763bd798cc3dc01e",
+            "id": "01ffc657c21c1c99",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
                 "file": "Hunter.md",
-                "mode": "source",
-                "source": false
-              }
-            }
-          },
-          {
-            "id": "3125b4ac3920871a",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "vault.md",
-                "mode": "source",
-                "source": false
-              }
-            }
-          }
-        ],
-        "currentTab": 2
-      },
-      {
-        "id": "eace9d0c7c679a89",
-        "type": "tabs",
-        "children": [
-          {
-            "id": "8dc7ce72ccca85b6",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "Hunters.md",
                 "mode": "source",
                 "source": false
               }
@@ -136,7 +99,6 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Hunters.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -153,7 +115,6 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Hunters.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -175,9 +136,7 @@
             "type": "leaf",
             "state": {
               "type": "outline",
-              "state": {
-                "file": "Hunters.md"
-              }
+              "state": {}
             }
           }
         ]
@@ -197,14 +156,17 @@
       "command-palette:Open command palette": false
     }
   },
-  "active": "8dc7ce72ccca85b6",
+  "active": "d9cecdfaa14f0250",
   "lastOpenFiles": [
+    "vault.md",
+    "world.md",
+    "Hunter naming system.md",
     "Hunter.md",
     "Hunters.md",
-    "vault.md",
     "humans.md",
+    "humans as a race.md",
+    "the name hunter.md",
     "templates/base format.md",
-    "world.md",
     "ideas.md",
     "templates"
   ]

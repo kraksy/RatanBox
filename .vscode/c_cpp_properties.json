@@ -1,28 +1,20 @@
 {
     "configurations": [
         {
-            "name": "Win32",
+            "name": "linux-gcc-x64",
             "includePath": [
                 "${workspaceFolder}/**",
-                "${workspaceFolder}/src/utils/math",
-                "${workspaceFolder}/src/utils",
-                "${workspaceFolder}/src/objects",
-                "${workspaceFolder}/src/objects/player",
-                "${workspaceFolder}/src/utils",
-                "${workspaceFolder}/src/utils",
-                "${workspaceFolder}/src/objects/player",
-                "${workspaceFolder}/src/utils",
-                "${workspaceFolder}/src/utils"
+                "${workspaceFolder}"
             ],
             "defines": [
                 "_DEBUG",
                 "UNICODE",
                 "_UNICODE"
             ],
-            "compilerPath": "C:\\MinGW\\bin\\gcc.exe",
-            "cStandard": "c11",
-            "cppStandard": "gnu++14",
-            "intelliSenseMode": "windows-gcc-x86",
+            "compilerPath": "/usr/bin/gcc",
+            "cStandard": "${default}",
+            "cppStandard": "${default}",
+            "intelliSenseMode": "linux-gcc-x64",
             "configurationProvider": "ms-vscode.makefile-tools"
         }
     ],
