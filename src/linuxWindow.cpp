@@ -10,9 +10,6 @@
 	by krek; 
 */
 
-static bool running;
-static logger log;
-
 #define internal static
 #define local_persist static
 #define global_variable static
@@ -22,9 +19,20 @@ global_variable Window window;
 global_variable XEvent event;
 global_variable GC gc;
 global_variable KeySym key;
+global_variable logger log;
 global_variable char text[255];
 
 global_variable Bool running;
+
+
+static int closeWindow()
+{
+	log.print(log.INFO_LEVEL, "window is closing");
+	XFreeGC(display, gc);
+	XDestroyWindow(display, window);
+	XCloseDisplay(display);
+	exit(1);
+}
 
 int main(void)
 {
@@ -64,13 +72,4 @@ int main(void)
 		closeWindow();
 	}
 
-}
-
-void closeWindow()
-{
-	log.print(log.INFO_LEVEL, "window is closing");
-	XFreeGC(display, gc);
-	XDestroyWindow(display, window);
-	XCloseDisplay(display);
-	exit(1);
 }

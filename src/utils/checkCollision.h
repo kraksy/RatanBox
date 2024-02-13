@@ -8,7 +8,7 @@ public:
       
       bool checkVec2(float x, float y, float x2, float y2);
       bool checkVec3(float x , float y, float x2, float y2, float x3, float y3);
-      bool checkVec4(float x, float ,y, float x2, float y2, float x3, float y3, float x4, float y4);
+      bool checkVec4(float x, float y, float x2, float y2, float x3, float y3, float x4, float y4);
 };
 
 checkCollision::checkCollision()
@@ -42,6 +42,8 @@ bool checkVec3(float x, float y, float x2, float y2, float x3, float y3)
       {
             /* code */
       }
-      
-}
+      else
+      {
 
+      }
+}
