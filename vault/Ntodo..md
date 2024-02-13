@@ -11,7 +11,7 @@
 - [ ] basic rendering 
 - [ ] text rendering 
 - [ ] camera init;
-- [ ] docker file
+- [x] docker file
 ### libraries
 - [x] logger
 - [ ] math lib
@@ -25,3 +25,4 @@
 - [ ] expand on hunters in general 
 ### fleeting ideas
 - [ ] if I ever implement waterfall in the game , I should make it a trap.
+- [ ] make a web for this vault
