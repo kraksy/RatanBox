@@ -1,6 +1,7 @@
 
 #include <logger.h>
 #include <sokol_gfx.h>
+#include <shellapi.h>
 
 /*
     this is the code for the game engine ratan box 
@@ -12,6 +13,8 @@
 #include <iostream>
 #include <windows.h>
 #include <d2d1.h>
+
+#include <d3d12.h> // dunno
 
 logger log;
 
