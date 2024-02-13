@@ -11,7 +11,7 @@
             "id": "55f02cd3f994df2f",
             "type": "leaf",
             "state": {
-              "type": "empty",
+              "type": "graph",
               "state": {}
             }
           }
@@ -141,8 +141,8 @@
   },
   "active": "55f02cd3f994df2f",
   "lastOpenFiles": [
-    "Ntodo..md",
     "Hunter.md",
+    "Ntodo..md",
     "todos.md",
     "vault.md",
     "world.md",

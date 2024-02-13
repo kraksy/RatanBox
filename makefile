@@ -3,7 +3,7 @@ CFLAGS = -g -Wall
 LIBS = -lm -lstdc++ -lgdi32 -lfmt
 OBJ = main.o Window.o
 
-includePath = -I src/objects/player -I src/utils -I src -I src/fmt
+includePath = -I src/objects/player -I src/utils -I src -I src/fmt -I src/sokol
 libraryPath = -L /library -L glfw
 
 main:

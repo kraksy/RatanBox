@@ -3,11 +3,34 @@
 #include <X11/Xlib.h>
 #include <logger.h>
 
-/*
-	code for window management on linux 
-	its done in x11
+#include <sokol_gfx.h>
+#include <sokol_app.h>
+#include <sokol_glue.h>
+
+#define SOKOL_IMPL or
+#define SOKOL_GFX_IMPL
+
+#define SOKOL_GLCORE33
+#define SOKOL_GLES3
+#define SOKOL_D3D11
+#define SOKOL_METAL
+#define SOKOL_WGPU
+#define SOKOL_DUMMY_BACKEND
+
+#define SOKOL_ASSERT(c)
+#define SOKOL_UNREACHABLE()
+#define SOKOL_API_IMPL              
+#define SOKOL_TRACE_HOOKS           
+#define SOKOL_EXTERNAL_GL_LOADER
+
+/*                        
+	# ratan                                                                                                                              vv
+	ratan window implementation for linux 
+	made with `x11` , and sokol header files  
 	
-	by krek; 
+	// add 3d api context // probably opengl
+
+	by krek; // 2023 
 */
 
 #define internal static
@@ -36,8 +59,12 @@ static int closeWindow()
 
 int main(void)
 {
-	
 	display = XOpenDisplay("gah");
+
+	sg_setup(&(sg_desc){
+        .logger.func = slog_func,
+    });
+
 
 	if (display == NULL)
 	{
