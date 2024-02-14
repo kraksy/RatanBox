@@ -28,7 +28,7 @@ logger::~logger()
 
 void logger::print(logger::LogLevel const level, std::string message)
 {
-    std::cout << fmt::format("{}", message) << std::endl;
+    fmt::print(fmt::format("{}", message));
 }
 
 #endif // LOGGER_H
