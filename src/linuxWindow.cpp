@@ -24,7 +24,7 @@
 #define SOKOL_EXTERNAL_GL_LOADER
 
 /*                        
-	# ratan                                                                                                                              vv
+    #ratan
 	ratan window implementation for linux 
 	made with `x11` , and sokol header files  
 	
