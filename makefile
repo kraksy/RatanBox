@@ -11,7 +11,7 @@ main:
 win32 : 
 	$(CC) src\win32_window.cpp $(includePath) $(libraryPath) -o win32_window $(LIBS)
 linux :
-	$(CC) src/linuxWindow.cpp $(includePath) $(libraryPath) -o main -lX11 
+	$(CC) src/linuxWindow.cpp $(includePath) $(libraryPath) -o main -lX1
 clean :
 	del /F /Q *.exe *.o *.out
 	echo "cleaned"
