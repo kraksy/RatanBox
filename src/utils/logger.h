@@ -1,7 +1,8 @@
 
 #ifndef LOGGER_H
 #define LOGGER_H
-#include <iostream>
+#include <iostream>m
+#include <fmt/core.h>
 
 class logger
 {
@@ -12,8 +13,8 @@ class logger
         }; // so when creating a log in code , this will work as the first argument to the log function
         ~logger();
         logger();
-        const char* gprint(logger::LogLevel const level, const char* message); 
-        void print(logger::LogLevel const level, const char* message);
+        std::string gprint(logger::LogLevel const level, std::string message); 
+        void print(logger::LogLevel const level, std::string message);
     
 };
 
@@ -25,17 +26,9 @@ logger::~logger()
 {
 }
 
-void logger::print(logger::LogLevel const level, const char* message)
+void logger::print(logger::LogLevel const level, std::string message)
 {
-    std::cout << (level, message) << std::endl;
-
-    //<< std::format("[{}] {} | {} | {}"), static_cast<enum>(level),     
-}
-
-const char* logger::gprint(logger::LogLevel const level, const char* message)
-{
-    std::cout << level + message << std::endl;
-    return message;
+    fmt::print(fmt::format("{}", message));
 }
 
 #endif // LOGGER_H

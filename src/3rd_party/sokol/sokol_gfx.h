@@ -126,7 +126,7 @@
 
             sg_begin_default_pass(const sg_pass_action* action, int width, int height)
 
-        ...or alternatively with:
+        ...or alternatively with:m
 
             sg_begin_default_passf(const sg_pass_action* action, float width, float height)
 

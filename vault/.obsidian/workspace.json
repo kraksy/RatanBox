@@ -85,7 +85,11 @@
             "state": {
               "type": "backlink",
               "state": {
+<<<<<<< HEAD
                 "file": "humans.md",
+=======
+                "file": "Ntodo..md",
+>>>>>>> fbf08fa8bee6b77d515d93599fb5e615c9d23008
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -102,7 +106,11 @@
             "state": {
               "type": "outgoing-link",
               "state": {
+<<<<<<< HEAD
                 "file": "humans.md",
+=======
+                "file": "Ntodo..md",
+>>>>>>> fbf08fa8bee6b77d515d93599fb5e615c9d23008
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -125,7 +133,11 @@
             "state": {
               "type": "outline",
               "state": {
+<<<<<<< HEAD
                 "file": "humans.md"
+=======
+                "file": "Ntodo..md"
+>>>>>>> fbf08fa8bee6b77d515d93599fb5e615c9d23008
               }
             }
           }
@@ -146,11 +158,27 @@
       "command-palette:Open command palette": false
     }
   },
+<<<<<<< HEAD
   "active": "c92f43addb795a6d",
   "lastOpenFiles": [
     "Hunter.md",
     "vault.md",
     "world.md",
+=======
+  "active": "55f02cd3f994df2f",
+  "lastOpenFiles": [
+    "Hunter.md",
+    "Ntodo..md",
+    "todos.md",
+    "vault.md",
+    "world.md",
+    "Hunter naming system.md",
+    "Hunters.md",
+    "humans.md",
+    "humans as a race.md",
+    "the name hunter.md",
+    "templates/base format.md",
+>>>>>>> fbf08fa8bee6b77d515d93599fb5e615c9d23008
     "ideas.md",
     "humans.md",
     "Hunters.md",

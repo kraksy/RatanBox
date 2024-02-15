@@ -12,8 +12,9 @@
 
 #include <iostream>
 #include <windows.h>
+#include <d2d1.h>
 
-#include <d3d12.h> // dunno
+#include <d3d12.h> // cant find header files in windows files for some reason 
 
 logger log;
 
