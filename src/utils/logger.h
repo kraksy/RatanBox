@@ -1,8 +1,8 @@
 
 #ifndef LOGGER_H
 #define LOGGER_H
-#include <iostream>m
-#include <fmt/core.h>
+
+#include <iostream>
 
 class logger
 {

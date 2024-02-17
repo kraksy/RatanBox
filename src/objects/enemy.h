@@ -24,8 +24,7 @@ class enemy
 
 enemy(std::string String, int number, int damage)
 {
-    health-> health;
-    name -> name;
+    this.name -> String;
     maxHealth -> health;
     damage -> damage;
     id = for (int i = 0; i < id; i++) {this.id == i};
