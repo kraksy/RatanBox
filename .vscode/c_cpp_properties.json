@@ -18,7 +18,7 @@
                 "UNICODE",
                 "_UNICODE"
             ],
-            "compilerPath": "/usr/bin/g++",
+            "compilerPath": "/usr/bin/gcc",
             "cStandard": "${default}",
             "cppStandard": "c++23",
             "intelliSenseMode": "linux-gcc-x64",
