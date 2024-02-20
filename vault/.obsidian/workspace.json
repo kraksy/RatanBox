@@ -1,22 +1,18 @@
 {
   "main": {
-    "id": "e66ce1cb3652144e",
+    "id": "d34d5e7fc76c2421",
     "type": "split",
     "children": [
       {
-        "id": "1f85d211ab332730",
+        "id": "4528245363e2de57",
         "type": "tabs",
         "children": [
           {
-            "id": "473da5ad77be0f1a",
+            "id": "50792286e49ab81e",
             "type": "leaf",
             "state": {
-              "type": "markdown",
-              "state": {
-                "file": "humans.md",
-                "mode": "source",
-                "source": false
-              }
+              "type": "empty",
+              "state": {}
             }
           }
         ]
@@ -25,15 +21,15 @@
     "direction": "vertical"
   },
   "left": {
-    "id": "ba1b8e2b85e5998a",
+    "id": "2d9ea3da4aec2072",
     "type": "split",
     "children": [
       {
-        "id": "f68d74c9c3bf3384",
+        "id": "0e7418151fee590f",
         "type": "tabs",
         "children": [
           {
-            "id": "c92f43addb795a6d",
+            "id": "d2ea3c78bb31bb5a",
             "type": "leaf",
             "state": {
               "type": "file-explorer",
@@ -43,7 +39,7 @@
             }
           },
           {
-            "id": "9a8771a1d539d8a4",
+            "id": "ec2e0c2c977942f0",
             "type": "leaf",
             "state": {
               "type": "search",
@@ -58,7 +54,7 @@
             }
           },
           {
-            "id": "f92bdb8f7f50809b",
+            "id": "5586908bf7b258c2",
             "type": "leaf",
             "state": {
               "type": "bookmarks",
@@ -72,24 +68,19 @@
     "width": 300
   },
   "right": {
-    "id": "00687fab2e94590b",
+    "id": "c51ab2a587905988",
     "type": "split",
     "children": [
       {
-        "id": "3226cf5804818b41",
+        "id": "720a4f4373381985",
         "type": "tabs",
         "children": [
           {
-            "id": "676c5712559231b0",
+            "id": "6efe3011d463adc7",
             "type": "leaf",
             "state": {
               "type": "backlink",
               "state": {
-<<<<<<< HEAD
-                "file": "humans.md",
-=======
-                "file": "Ntodo..md",
->>>>>>> fbf08fa8bee6b77d515d93599fb5e615c9d23008
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -101,23 +92,18 @@
             }
           },
           {
-            "id": "a04266dd6f034898",
+            "id": "d0b58a8a6cc7d656",
             "type": "leaf",
             "state": {
               "type": "outgoing-link",
               "state": {
-<<<<<<< HEAD
-                "file": "humans.md",
-=======
-                "file": "Ntodo..md",
->>>>>>> fbf08fa8bee6b77d515d93599fb5e615c9d23008
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
             }
           },
           {
-            "id": "f1c46c5574caf40b",
+            "id": "7d4d8a67988d044d",
             "type": "leaf",
             "state": {
               "type": "tag",
@@ -128,17 +114,11 @@
             }
           },
           {
-            "id": "bd6b654a60b58421",
+            "id": "8d400434027706b7",
             "type": "leaf",
             "state": {
               "type": "outline",
-              "state": {
-<<<<<<< HEAD
-                "file": "humans.md"
-=======
-                "file": "Ntodo..md"
->>>>>>> fbf08fa8bee6b77d515d93599fb5e615c9d23008
-              }
+              "state": {}
             }
           }
         ]
@@ -158,31 +138,6 @@
       "command-palette:Open command palette": false
     }
   },
-<<<<<<< HEAD
-  "active": "c92f43addb795a6d",
-  "lastOpenFiles": [
-    "Hunter.md",
-    "vault.md",
-    "world.md",
-=======
-  "active": "55f02cd3f994df2f",
-  "lastOpenFiles": [
-    "Hunter.md",
-    "Ntodo..md",
-    "todos.md",
-    "vault.md",
-    "world.md",
-    "Hunter naming system.md",
-    "Hunters.md",
-    "humans.md",
-    "humans as a race.md",
-    "the name hunter.md",
-    "templates/base format.md",
->>>>>>> fbf08fa8bee6b77d515d93599fb5e615c9d23008
-    "ideas.md",
-    "humans.md",
-    "Hunters.md",
-    "templates/base format.md",
-    "templates"
-  ]
+  "active": "50792286e49ab81e",
+  "lastOpenFiles": []
 }
