@@ -26,7 +26,6 @@ public:
       
       window32();
       ~window32();
-
       struct window
       {
             HINSTANCE instance;
@@ -43,10 +42,15 @@ public:
             int prevHeight;
       } window;
 
+	struct {
+	int code;
+	LPCWSTR message;
+	} err = { ERR_NONE, nullptr };
+
       void create_context();
       void create_window(HINSTANCE instance);
 
-      bool shouldClose();
+      bool shouldClose(UINT message);
       void ResizeWindow(RECT *WindowRect, int X, int Y, int Width, int Height);
       void ResizeWindow(RECT *WindowRect);
       void ResizeWindow(int X, int Y, int Width, int Height);
@@ -96,7 +100,8 @@ test_draw()
 void
 set_fullscreen(bool fullscreen)
 {
-	DWORD style = GetWindowLong(window.hndl, GWL_STYLE);
+	DWORD style;
+	style = GetWindowLong(window.hndl, GWL_STYLE);
 	if (fullscreen)
 	{
 		RECT rect;
