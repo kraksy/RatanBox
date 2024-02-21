@@ -1,4 +1,5 @@
 CC = g++
+WCC = winegcc 
 CFLAGS = -g -Wall
 LIBS = -lm -lstdc++ -lgdi32 -lfmt
 OBJ = main.o Window.o
@@ -10,7 +11,7 @@ main:
 win32 : 
 	$(CC) src\win32_window.cpp $(includePath) $(libraryPath) -o win32_window $(LIBS)
 linux :
-	$(CC) src/ratan.cpp $(includePath) $(libraryPath) -o main -lX11 -lfmt
+	$(WCC) src/linuxWindow.cpp $(includePath) $(libraryPath) -o main -lX11 -lfmt
 clean :
 	del /F /Q *.exe *.o *.out
 	echo "cleaned"
