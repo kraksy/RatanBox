@@ -9,6 +9,7 @@ class game
 private:
       
 public:
+      
       game();
       ~game();
 };
