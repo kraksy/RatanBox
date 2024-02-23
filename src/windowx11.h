@@ -2,11 +2,29 @@
 #include <X11/Xlib.h>
 #include <X11/Xutil.h>
 
+#include <GL/gl.h>
+#include <GL/glx.h>
+#include <GL/glu.h>
+
+/*
+    https://github.com/gamedevtech/X11OpenGLWindow/blob/master/X11.cpp#L272
+    https://www.khronos.org/opengl/wiki/Programming_OpenGL_in_Linux:_GLX_and_Xlib
+*/
+
 class windowx11
 {
 public:
+    bool running;
+
     Display *dis;
-    Window win;
+    Window win; 
+    Window root;
+
+    XVisualInfo             *vi;
+    Colormap                cmap;
+    XSetWindowAttributes    swa;
+    GLXContext              glc;
+    XWindowAttributes       gwa;
     XEvent event;
     GC gc;
     int screen;
@@ -14,30 +32,28 @@ public:
     KeySym key;
     char text[255]; // input shit
 
-    struct windowx
-    {
-        Display* dis,
-        Window par, // idk
-        int x,
-        int y,
-        unsigned int width,
-        unsigned int height,
-        unsigned int border_width,
-        unsigned long border,
-        unsigned long background
-    } windowx;
-
     windowx11();
     ~windowx11();
 
-    void create_window();
-    bool should_close();
+    void create_window(); // v 
+    bool should_close(); // v
 
-    void set_fullscreen();
+    void set_fullscreen(); 
     void center_window();
 
-    void test_draw();
-    void close_window();
+    void DrawAQuad();
+    void test_draw(); // v
+    void draw_text();
+
+    void redraw_window();
+
+    void close_window(); // v
+    void resize_GL(int w, int h); 
+
+    void read_inputs();
+
+    void get_colours(); // v
+    void create_colormap(); // v
 };
 
 windowx11::windowx11()
@@ -46,39 +62,4 @@ windowx11::windowx11()
 
 windowx11::~windowx11()
 {
-}
-
-void
-windowx11::close_window()
-{
-    XFreeGC(dis, gc);
-	XDestroyWindow(dis, win);
-	XCloseDisplay(dis);
-}
-
-void
-windowx11::create_window()
-{
-    unsigned long black,white;
-
-	dis=XOpenDisplay((char *)0);
-   	screen=DefaultScreen(dis);
-
-	black=BlackPixel(dis,screen),	
-	white=WhitePixel(dis, screen);  
-
-   	win=XCreateSimpleWindow(dis,DefaultRootWindow(dis),0,0,	
-    200, 300, 5, white, black);
-
-	XSetStandardProperties(dis,win,"My Window","HI!",None,NULL,0,NULL);
-
-	XSelectInput(dis, win, ExposureMask|ButtonPressMask|KeyPressMask);
-
-	gc=XCreateGC(dis, win, 0,0);        
-
-	XSetBackground(dis,gc,white);
-	XSetForeground(dis,gc,black);
-
-	XClearWindow(dis, win);
-	XMapRaised(dis, win);
 }
