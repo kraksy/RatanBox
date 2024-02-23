@@ -6,6 +6,9 @@
 	- farmer hunters name would start with letter A ( Agriculture ) first letter in alphabet, so its really important in terms of surviving in space
 		- A ( as I mentioned , Agriculture )
 		- W ( assistant ) 
+		- M ( military staff )
+		- S ( military soldier )
+		- G ( gastro "food" )
 		- 
 	- date of creation should be there 
 	- id , so how many of them were created , and whats its id 

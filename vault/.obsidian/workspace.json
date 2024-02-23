@@ -11,8 +11,12 @@
             "id": "50792286e49ab81e",
             "type": "leaf",
             "state": {
-              "type": "empty",
-              "state": {}
+              "type": "markdown",
+              "state": {
+                "file": "humans.md",
+                "mode": "source",
+                "source": false
+              }
             }
           }
         ]
@@ -81,6 +85,7 @@
             "state": {
               "type": "backlink",
               "state": {
+                "file": "humans.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -97,6 +102,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
+                "file": "humans.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -118,7 +124,9 @@
             "type": "leaf",
             "state": {
               "type": "outline",
-              "state": {}
+              "state": {
+                "file": "humans.md"
+              }
             }
           }
         ]
@@ -139,5 +147,16 @@
     }
   },
   "active": "50792286e49ab81e",
-  "lastOpenFiles": []
+  "lastOpenFiles": [
+    "humans as a race.md",
+    "Hunter.md",
+    "Hunter naming system.md",
+    "ideas.md",
+    "Ntodo..md",
+    "vault for void polyrhythm.md",
+    "world.md",
+    "the name hunter.md",
+    "Hunters.md",
+    "humans.md"
+  ]
 }
