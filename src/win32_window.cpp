@@ -23,6 +23,7 @@ global_variable BITMAPINFO BitmapInfo;
 global_variable void *BitmapMemory;
 global_variable int BitmapWidth;
 global_variable int BitmapHeight;
+global_variable int BytesPerPixel = 4;
 
 typedef uint8_t uint8;
 typedef uint16_t uint16;
@@ -33,6 +34,35 @@ typedef int8_t int8;
 typedef int16_t int16;
 typedef int32_t int32;
 typedef int64_t int64;
+
+internal void
+Render(int XOffset, int YOffset)
+{
+  int Width = BitmapWidth;
+  int Height = BitmapHeight;
+
+  int pitch = Width * BytesPerPixel;
+  uint8 *Row = (uint8 *)BitmapMemory;
+  for (int Y = 0; Y < BitmapHeight; ++Y)
+  {
+    uint8 *Pixel = (uint8 *)Row;
+    for (int X = 0; X < BitmapWidth; ++X)
+    {
+      *Pixel = (uint8)(X + XOffset);
+      ++Pixel;
+
+      *Pixel = (uint8)(Y + YOffset);
+      ++Pixel;
+
+      *Pixel = 0;
+      ++Pixel;
+
+      *Pixel = 0;
+      ++Pixel;
+    }
+    Row += pitch;
+  }
+}
 
 internal void
 Win32ResizeDIBSection(int Width, int Height)
@@ -53,32 +83,10 @@ Win32ResizeDIBSection(int Width, int Height)
   BitmapInfo.bmiHeader.biBitCount = 32;
   BitmapInfo.bmiHeader.biCompression = BI_RGB;
 
-  int BytesPerPixel = 4;
   int BitmapMemorySize = BitmapWidth * BitmapHeight * BytesPerPixel;
   BitmapMemory = VirtualAlloc(0, BitmapMemorySize, MEM_COMMIT, PAGE_READWRITE);
 
-  int pitch = Width * BytesPerPixel;
-  uint8 *Row = (uint8 *)BitmapMemory;
-  for (int Y = 0; Y < BitmapHeight; ++Y)
-  {
-    uint8 *Pixel = (uint8 *)Row;
-    for (int X = 0; X < BitmapWidth; ++X)
-    {
-      *Pixel = 0;
-      ++Pixel;
-
-      *Pixel = 0;
-      ++Pixel;
-
-      *Pixel = 255;
-      ++Pixel;
-
-      *Pixel = 0;
-      ++Pixel;
-    }
-    Row += pitch;
-  }
-
+  Render(128, 0);
 }
 
 internal void
@@ -201,7 +209,7 @@ int CALLBACK WinMain(
         while(Running)
         {
           MSG Message;
-          BOOL MessageResult = GetMessage(&Message,0,0,0);
+          BOOL MessageResult = PeekMessage(&Message,0,0,0,PM_REMOVE);
           if (MessageResult > 0)
           {
             TranslateMessage(&Message);

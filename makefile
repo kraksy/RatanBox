@@ -3,7 +3,7 @@ WCC = winegcc # for linux win32 cross compilation
 
 CFLAGS = -g -Wall
 
-LIBS = -lm -lstdc++ -lgdi32 -lfmt -lglfw3 
+LIBS = -lm -lstdc++ -lgdi32 
 
 includePath = -I src/utils -I src -I src/3rd_party/glad/include -I src/3rd_party/glfw/include
 libraryPath = -L /library -L glfw -L glfw3.lib -L /usr/X11/lib
@@ -14,10 +14,12 @@ gl = -lGL
 
 x11 = -lX11 -lXrandr -lXi -ldl
 
+all:
+	$(CC) src/ratan.cpp $(includePath) $(libraryPath) -o ratan
 main:
 	g++ src/ratan.cpp $(includePath) $(libraryPath) -lX11 -lfmt -lglfw3 -lGL -lGLEW -lstdc++ -lm -lGL -lX11 -lpthread -lXrandr -lXi -ldl
-win32 : 
-	$(CC) src\win32_window.cpp $(includePath) $(libraryPath) -o win32_window $(LIBS)
+win : 
+	$(CC) src\win32_window.cpp $(includePath) $(libraryPath) -o win $(LIBS)
 linux :
 	$(CC) src/ratan.cpp $(includePath) $(libraryPath) -lX11 -lfmt -lglfw3 -lGL -lGLEW -lstdc++ -lm -lGL -lX11 -lpthread -lXrandr -lXi -ldl
 clean :

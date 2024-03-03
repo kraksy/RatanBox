@@ -53,7 +53,7 @@ public:
 	HGLRC renderContext;
 	int prevX, prevY, width, height, prevWidth, prevHeight, resX, resY;
 	bool fullscreen;
-} window = { L"OpenGL", "OpenGL", L"OpenGL Example", nullptr, nullptr, nullptr, 0, 0, 0, 0, 0, 0, 640, 480, false };
+      } window = { L"OpenGL", "OpenGL", L"OpenGL Example", nullptr, nullptr, nullptr, 0, 0, 0, 0, 0, 0, 640, 480, false };
 
 
 	struct {

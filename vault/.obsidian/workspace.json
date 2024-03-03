@@ -18,8 +18,21 @@
                 "source": false
               }
             }
+          },
+          {
+            "id": "a5fd3e506a4507a7",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "vault for void polyrhythm.md",
+                "mode": "source",
+                "source": false
+              }
+            }
           }
-        ]
+        ],
+        "currentTab": 1
       }
     ],
     "direction": "vertical"
@@ -85,7 +98,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "humans.md",
+                "file": "vault for void polyrhythm.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -102,7 +115,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "humans.md",
+                "file": "vault for void polyrhythm.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -125,7 +138,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "humans.md"
+                "file": "vault for void polyrhythm.md"
               }
             }
           }
@@ -146,17 +159,17 @@
       "command-palette:Open command palette": false
     }
   },
-  "active": "50792286e49ab81e",
+  "active": "a5fd3e506a4507a7",
   "lastOpenFiles": [
-    "humans as a race.md",
-    "Hunter.md",
-    "Hunter naming system.md",
-    "ideas.md",
-    "Ntodo..md",
-    "vault for void polyrhythm.md",
     "world.md",
+    "vault for void polyrhythm.md",
     "the name hunter.md",
+    "Ntodo..md",
     "Hunters.md",
-    "humans.md"
+    "humans.md",
+    "humans as a race.md",
+    "Hunter naming system.md",
+    "Hunter.md",
+    "ideas.md"
   ]
 }
