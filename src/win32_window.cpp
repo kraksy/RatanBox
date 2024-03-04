@@ -209,7 +209,8 @@ int CALLBACK WinMain(
         while(Running)
         {
           MSG Message;
-          BOOL MessageResult = PeekMessage(&Message,0,0,0,PM_REMOVE);
+          BOOL MessageResult = GetMessage(&Message,0,0,0); // when opening in wine on linux this works for some reason and peekmessage doesnt // check after finishing peekmessage
+          //BOOL MessageResult = PeekMessage(&Message,0,0,0,PM_REMOVE);
           if (MessageResult > 0)
           {
             TranslateMessage(&Message);
