@@ -11,13 +11,22 @@
   handmadehero.org is the source of the code
 */
 
-// stoped at 36:03 ep 4
+// stoped at ep 5
 
 #define internal static
 #define local_persist static
 #define global_variable static
 
 global_variable bool Running;
+
+struct win32_offscreen_buffer
+{
+  BITMAPINFO Info;
+  void *Memory;
+  int Width;
+  int Height;
+  int BytesPerPixel;
+};
 
 global_variable BITMAPINFO BitmapInfo;
 global_variable void *BitmapMemory;
@@ -36,7 +45,7 @@ typedef int32_t int32;
 typedef int64_t int64;
 
 internal void
-Render(int XOffset, int YOffset)
+Render(win32_offscreen_buffer *buffer, int XOffset, int YOffset)
 {
   int Width = BitmapWidth;
   int Height = BitmapHeight;
@@ -45,20 +54,12 @@ Render(int XOffset, int YOffset)
   uint8 *Row = (uint8 *)BitmapMemory;
   for (int Y = 0; Y < BitmapHeight; ++Y)
   {
-    uint8 *Pixel = (uint8 *)Row;
+    uint32 *Pixel = (uint32 *)Row;
     for (int X = 0; X < BitmapWidth; ++X)
     {
-      *Pixel = (uint8)(X + XOffset);
-      ++Pixel;
-
-      *Pixel = (uint8)(Y + YOffset);
-      ++Pixel;
-
-      *Pixel = 0;
-      ++Pixel;
-
-      *Pixel = 0;
-      ++Pixel;
+      uint8 Blue = (X + XOffset);
+      uint8 Green = (Y + YOffset);
+      *Pixel++ = ((Green << 8) | Blue);
     }
     Row += pitch;
   }
@@ -85,15 +86,13 @@ Win32ResizeDIBSection(int Width, int Height)
 
   int BitmapMemorySize = BitmapWidth * BitmapHeight * BytesPerPixel;
   BitmapMemory = VirtualAlloc(0, BitmapMemorySize, MEM_COMMIT, PAGE_READWRITE);
-
-  Render(128, 0);
 }
 
 internal void
-Win32UpdateWindow(HDC DeviceContext, RECT *WindowRect, int X, int Y, int Width, int Height)
+Win32UpdateWindow(HDC DeviceContext, RECT ClientRect, int X, int Y, int Width, int Height)
 {
-  int WindowWidth = WindowRect->right - WindowRect->left;
-  int WindowHeight = WindowRect->bottom - WindowRect->top;
+  int WindowWidth = ClientRect.right - ClientRect.left;
+  int WindowHeight = ClientRect.bottom - ClientRect.top;
   StretchDIBits(DeviceContext,
     /*
     X, Y, Width, Height, 
@@ -156,7 +155,7 @@ LRESULT CALLBACK Win32MainWindowCallback(
     RECT ClientRectangle;
     GetClientRect(window, &ClientRectangle);
 
-   Win32UpdateWindow(DeviceContex, &ClientRectangle, X, Y, Width, Height);
+   Win32UpdateWindow(DeviceContex, ClientRectangle, X, Y, Width, Height);
    EndPaint(window, &Paint);
   }break;
 
@@ -178,8 +177,9 @@ int CALLBACK WinMain(
 )
 {
   
-  WNDCLASS WindowClass = {};     
-  WindowClass.style = CS_OWNDC|CS_HREDRAW|CS_VREDRAW;
+  WNDCLASS WindowClass = {};    
+
+  WindowClass.style = CS_HREDRAW|CS_VREDRAW;
   WindowClass.lpfnWndProc = Win32MainWindowCallback;
   WindowClass.hInstance = hInstance;
   // WindowClass.hIcon;
@@ -187,7 +187,7 @@ int CALLBACK WinMain(
 
   if (RegisterClass(&WindowClass))
   {
-    HWND WindowHandle = 
+    HWND Window = 
       CreateWindowExA
       (
         0,
@@ -203,23 +203,35 @@ int CALLBACK WinMain(
         hInstance,
         0
       );
-      if (WindowHandle)
+      if (Window)
       {
+        int XOffset = 0;
+        int YOffset = 0;
+
         Running = true;
         while(Running)
         {
           MSG Message;
-          BOOL MessageResult = GetMessage(&Message,0,0,0); // when opening in wine on linux this works for some reason and peekmessage doesnt // check after finishing peekmessage
-          //BOOL MessageResult = PeekMessage(&Message,0,0,0,PM_REMOVE);
-          if (MessageResult > 0)
+          while(PeekMessage(&Message,0,0,0,PM_REMOVE))
           {
+            if (Message.message == WM_QUIT)
+            {
+              Running = false;
+            }
+
             TranslateMessage(&Message);
             DispatchMessage(&Message);
           }
-          else
-          {
-            break;
-          }
+          
+          Render(XOffset, YOffset);
+          HDC DeviceContext = GetDC(Window);
+          RECT ClientRectangle;
+	        GetClientRect(Window, &ClientRectangle);
+          int WindowWidth = ClientRectangle.right - ClientRectangle.left;
+          int WindowHeight = ClientRectangle.bottom - ClientRectangle.top;
+          Win32UpdateWindow(DeviceContext, ClientRectangle, 0, 0, WindowWidth, WindowHeight);
+          ReleaseDC(Window, DeviceContext);
+          ++XOffset;
         }
       }
       else
