@@ -105,6 +105,24 @@ Win32UpdateWindow(HDC DeviceContext, RECT ClientRect, int X, int Y, int Width, i
     DIB_RGB_COLORS, SRCCOPY);
 }
 
+internal void
+Win32RotateBitMap(HDC DeviceContext, RECT ClientRect)
+{
+  int WindowWidth = ClientRect.right - ClientRect.left;
+  int WindowHeight = ClientRect.bottom - ClientRect.top;
+  PlgBlt(DeviceContext,
+  *lpPoint,
+  hdcSrc,
+  xSrc,
+  ySrc,
+  width,
+  height,
+  hbmMask,
+  xMask,
+  yMask
+  );
+}
+
 LRESULT CALLBACK Win32MainWindowCallback(
   HWND window,
   UINT message,
