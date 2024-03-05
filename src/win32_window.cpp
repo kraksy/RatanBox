@@ -17,16 +17,18 @@
 #define local_persist static
 #define global_variable static
 
-global_variable bool Running;
-
 struct win32_offscreen_buffer
 {
   BITMAPINFO Info;
   void *Memory;
   int Width;
   int Height;
+  int Pitch;
   int BytesPerPixel;
 };
+
+global_variable bool Running;
+global_variable win32_offscreen_buffer GlobalBackBuffer;
 
 global_variable BITMAPINFO BitmapInfo;
 global_variable void *BitmapMemory;
@@ -44,83 +46,84 @@ typedef int16_t int16;
 typedef int32_t int32;
 typedef int64_t int64;
 
-internal void
-Render(win32_offscreen_buffer *buffer, int XOffset, int YOffset)
+struct win32_window_dimension
 {
-  int Width = BitmapWidth;
-  int Height = BitmapHeight;
+  int Width;
+  int Height;
+};
 
-  int pitch = Width * BytesPerPixel;
-  uint8 *Row = (uint8 *)BitmapMemory;
-  for (int Y = 0; Y < BitmapHeight; ++Y)
+win32_window_dimension
+GetWindowDimension(HWND Window)
+{
+  win32_window_dimension Result;
+
+  RECT ClientRectangle;
+  GetClientRect(Window, &ClientRectangle);
+  Result.Width = ClientRectangle.right - ClientRectangle.left;
+  Result.Height = ClientRectangle.bottom - ClientRectangle.top;
+
+  return(Result);
+}
+
+internal void
+Render(win32_offscreen_buffer Buffer, int XOffset, int YOffset)
+{
+  uint8 *Row = (uint8 *)Buffer.Memory;
+  for (int Y = 0; Y < Buffer.Height; ++Y)
   {
     uint32 *Pixel = (uint32 *)Row;
-    for (int X = 0; X < BitmapWidth; ++X)
+    for (int X = 0; X < Buffer.Width; ++X)
     {
       uint8 Blue = (X + XOffset);
       uint8 Green = (Y + YOffset);
       *Pixel++ = ((Green << 8) | Blue);
     }
-    Row += pitch;
+    Row += Buffer.Pitch;
   }
 }
 
 internal void
-Win32ResizeDIBSection(int Width, int Height)
+Win32ResizeDIBSection(win32_offscreen_buffer *Buffer, int Width, int Height)
 {
 
-  if (BitmapMemory)
+  if (Buffer->Memory)
   {
-    VirtualFree(BitmapMemory, 0, MEM_RELEASE);
+    VirtualFree(Buffer->Memory, 0, MEM_RELEASE);
   }
 
-  BitmapWidth = Width;
-  BitmapHeight = Height;
+  Buffer->Width = Width;
+  Buffer->Height = Height;
 
-  BitmapInfo.bmiHeader.biSize = sizeof(BitmapInfo.bmiHeader);
-  BitmapInfo.bmiHeader.biWidth = BitmapWidth;
-  BitmapInfo.bmiHeader.biHeight = -BitmapHeight;
-  BitmapInfo.bmiHeader.biPlanes = 1;
-  BitmapInfo.bmiHeader.biBitCount = 32;
-  BitmapInfo.bmiHeader.biCompression = BI_RGB;
+  Buffer->Info.bmiHeader.biSize = sizeof(Buffer->Info.bmiHeader);
+  Buffer->Info.bmiHeader.biWidth = Buffer->Width;
+  Buffer->Info.bmiHeader.biHeight = -Buffer->Height;
+  Buffer->Info.bmiHeader.biPlanes = 1;
+  Buffer->Info.bmiHeader.biBitCount = 32;
+  Buffer->Info.bmiHeader.biCompression = BI_RGB;
 
-  int BitmapMemorySize = BitmapWidth * BitmapHeight * BytesPerPixel;
-  BitmapMemory = VirtualAlloc(0, BitmapMemorySize, MEM_COMMIT, PAGE_READWRITE);
+  int BitmapMemorySize = Buffer->Width * Buffer->Height * Buffer->BytesPerPixel;
+  Buffer->Memory = VirtualAlloc(0, BitmapMemorySize, MEM_COMMIT, PAGE_READWRITE);
+  Buffer->Pitch = Width * BytesPerPixel;
+  
 }
 
 internal void
-Win32UpdateWindow(HDC DeviceContext, RECT ClientRect, int X, int Y, int Width, int Height)
+Win32DisplayBufferInWindow(HDC DeviceContext, 
+                          int WindowWidth, int WindowHeight,
+                          win32_offscreen_buffer Buffer,
+                          int X, int Y, int Width, int Height)
 {
-  int WindowWidth = ClientRect.right - ClientRect.left;
-  int WindowHeight = ClientRect.bottom - ClientRect.top;
+
   StretchDIBits(DeviceContext,
     /*
     X, Y, Width, Height, 
     X, Y, Width, Height, 
     */
-    0, 0, BitmapWidth, BitmapHeight,
+    0, 0, Buffer.Width, Buffer.Height,
     0, 0, WindowWidth, WindowHeight,
-    BitmapMemory,
-    &BitmapInfo,
+    Buffer.Memory,
+    &Buffer.Info,
     DIB_RGB_COLORS, SRCCOPY);
-}
-
-internal void
-Win32RotateBitMap(HDC DeviceContext, RECT ClientRect)
-{
-  int WindowWidth = ClientRect.right - ClientRect.left;
-  int WindowHeight = ClientRect.bottom - ClientRect.top;
-  PlgBlt(DeviceContext,
-  *lpPoint,
-  hdcSrc,
-  xSrc,
-  ySrc,
-  width,
-  height,
-  hbmMask,
-  xMask,
-  yMask
-  );
 }
 
 LRESULT CALLBACK Win32MainWindowCallback(
@@ -137,11 +140,8 @@ LRESULT CALLBACK Win32MainWindowCallback(
     // if done this way , vars gonna be exclusive in the code blocks
    case WM_SIZE:
    {
-	    RECT ClientRectangle;
-	    GetClientRect(window, &ClientRectangle);
-	    int Height = ClientRectangle.bottom - ClientRectangle.top; 
-    	int Width = ClientRectangle.right - ClientRectangle.left; 
-	    Win32ResizeDIBSection(Width, Height);
+      win32_window_dimension Dimension = GetWindowDimension(window);
+	    Win32ResizeDIBSection(&GlobalBackBuffer, Dimension.Width , Dimension.Height);
    } break; 
 
    case WM_DESTROY:
@@ -170,10 +170,11 @@ LRESULT CALLBACK Win32MainWindowCallback(
    int Height = Paint.rcPaint.bottom - Paint.rcPaint.top; 
    int Width = Paint.rcPaint.right - Paint.rcPaint.left; 
 
-    RECT ClientRectangle;
-    GetClientRect(window, &ClientRectangle);
+   win32_window_dimension Dimension = GetWindowDimension(window);
 
-   Win32UpdateWindow(DeviceContex, ClientRectangle, X, Y, Width, Height);
+   Win32DisplayBufferInWindow(DeviceContex, Window.Window, Window.Height,
+                    GlobalBackBuffer,
+                    X, Y, Width, Height);
    EndPaint(window, &Paint);
   }break;
 
@@ -241,13 +242,11 @@ int CALLBACK WinMain(
             DispatchMessage(&Message);
           }
           
-          Render(XOffset, YOffset);
+          Render(GlobalBackBuffer, XOffset, YOffset);
           HDC DeviceContext = GetDC(Window);
-          RECT ClientRectangle;
-	        GetClientRect(Window, &ClientRectangle);
-          int WindowWidth = ClientRectangle.right - ClientRectangle.left;
-          int WindowHeight = ClientRectangle.bottom - ClientRectangle.top;
-          Win32UpdateWindow(DeviceContext, ClientRectangle, 0, 0, WindowWidth, WindowHeight);
+          
+          Win32DisplayBufferInWindow(DeviceContext, ClientRectangle, GlobalBackBuffer
+           0, 0, WindowWidth, WindowHeight);
           ReleaseDC(Window, DeviceContext);
           ++XOffset;
         }

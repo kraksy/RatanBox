@@ -19,7 +19,7 @@ all:
 main:
 	g++ src/ratan.cpp $(includePath) $(libraryPath) -lX11 -lfmt -lglfw3 -lGL -lGLEW -lstdc++ -lm -lGL -lX11 -lpthread -lXrandr -lXi -ldl
 win : 
-	$(WCC) src/win32_window.cpp $(includePath) $(libraryPath) -o win $(LIBS)
+	$(CC) src/win32_window.cpp $(includePath) $(libraryPath) -o win $(LIBS)
 linux :
 	$(CC) src/ratan.cpp $(includePath) $(libraryPath) -lX11 -lfmt -lglfw3 -lGL -lGLEW -lstdc++ -lm -lGL -lX11 -lpthread -lXrandr -lXi -ldl
 clean :
