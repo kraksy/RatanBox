@@ -44,8 +44,8 @@
       "args": [],
       "stopAtEntry": false,
       "externalConsole": false,
-      "cwd": "/home/marcel/code/RatanBox/src",
-      "program": "/home/marcel/code/RatanBox/src/build/Debug/outDebug",
+      "cwd": "/home/marcel/code/cpp/RatanBox/core",
+      "program": "/home/marcel/code/cpp/RatanBox/core/build/Debug/outDebug",
       "MIMode": "gdb",
       "miDebuggerPath": "gdb",
       "setupCommands": [
