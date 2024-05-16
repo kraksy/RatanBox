@@ -1,0 +1,1 @@
+windows curses = https://github.com/wmcbrine/PDCurses
