@@ -195,7 +195,6 @@ int CALLBACK WinMain(
   int       showCode
 )
 {
-  
   WNDCLASS WindowClass = {};    
 
   WindowClass.style = CS_HREDRAW|CS_VREDRAW;
