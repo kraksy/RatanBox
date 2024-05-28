@@ -22,10 +22,6 @@ public:
         int prevHeight;
     }Window;
 
-    
-    
-        
-
-private:
-
+    static Window create_window(HINSTANCE instance);
+    static void create_context();
 };
