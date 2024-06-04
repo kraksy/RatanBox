@@ -10,4 +10,5 @@ add_subdirectory("core/window/curses")
 add_subdirectory("core/window/sdl2")
 add_subdirectory("core/window/sfml")
 
+target_link_libraries(win PUBLIC "win32")
 target_include_directories(win32 PUBLIC "core/window/win32")
