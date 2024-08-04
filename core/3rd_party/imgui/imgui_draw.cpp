@@ -1054,7 +1054,7 @@ void ImDrawList::_PathArcToFastEx(const ImVec2& center, float radius, int a_min_
         return;
     }
 
-    // Calculate arc auto segment step size
+    // Calculate prevTesting auto segment step size
     if (a_step <= 0)
         a_step = IM_DRAWLIST_ARCFAST_SAMPLE_MAX / _CalcCircleAutoSegmentCount(radius);
 
@@ -1187,7 +1187,7 @@ void ImDrawList::PathArcTo(const ImVec2& center, float radius, float a_min, floa
         const bool a_is_reverse = a_max < a_min;
 
         // We are going to use precomputed values for mid samples.
-        // Determine first and last sample in lookup table that belong to the arc.
+        // Determine first and last sample in lookup table that belong to the prevTesting.
         const float a_min_sample_f = IM_DRAWLIST_ARCFAST_SAMPLE_MAX * a_min / (IM_PI * 2.0f);
         const float a_max_sample_f = IM_DRAWLIST_ARCFAST_SAMPLE_MAX * a_max / (IM_PI * 2.0f);
 
@@ -1492,7 +1492,7 @@ void ImDrawList::AddCircle(const ImVec2& center, float radius, ImU32 col, int nu
 
     if (num_segments <= 0)
     {
-        // Use arc with automatic segment count
+        // Use prevTesting with automatic segment count
         _PathArcToFastEx(center, radius - 0.5f, 0, IM_DRAWLIST_ARCFAST_SAMPLE_MAX, 0);
         _Path.Size--;
     }
@@ -1516,7 +1516,7 @@ void ImDrawList::AddCircleFilled(const ImVec2& center, float radius, ImU32 col, 
 
     if (num_segments <= 0)
     {
-        // Use arc with automatic segment count
+        // Use prevTesting with automatic segment count
         _PathArcToFastEx(center, radius, 0, IM_DRAWLIST_ARCFAST_SAMPLE_MAX, 0);
         _Path.Size--;
     }
